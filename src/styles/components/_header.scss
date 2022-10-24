@@ -1,0 +1,64 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: $white;
+  box-shadow: 1px 1px 8px #111;
+
+  &__top {
+    background-color: $header-top;
+    padding: 4px 0;
+    text-align: center;
+    font-weight: 300;
+    color: #111;
+    font-size: 0.9em;
+  }
+  #cart-icon {
+    font-size: 1.8em;
+    cursor: pointer;
+  }
+  #counter {
+    font-size: 0.7em;
+    font-weight: 500;
+    font-family: $ubuntu-font;
+  }
+}
+
+.nav {
+  // border: 1px solid rebeccapurple;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 0;
+
+  &__logo {
+    font-size: 2em;
+    color: $header-top;
+  }
+}
+.navbar {
+  width: 60%;
+  height: 10vh;
+  display: flex;
+  justify-content: space-between;
+
+  &__items {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &__link {
+    position: relative;
+    font-size: 1.3em;
+    color: $black;
+    display: block;
+    letter-spacing: 0.8px;
+    margin: 0 1.2em;
+  }
+}
+.detalle {
+  margin-top: 10rem;
+  text-align: center;
+  font-size: 2em;
+}
