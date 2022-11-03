@@ -1,0 +1,25 @@
+.card {
+    width: 18rem;
+    margin-top: 7rem;
+    // margin: 4px;
+    z-index: -2;
+}
+
+.itemList {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2em;
+    // grid-template-columns: 1fr;
+    // gap: 1em;
+    // place-items: center ;
+}
+
+.detalle {
+    text-align: center;
+    font-size: 1.8em;
+}
+
+.detalleProd {
+    max-width: 540px;
+}

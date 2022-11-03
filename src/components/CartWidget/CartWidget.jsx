@@ -1,9 +1,15 @@
-const CardWidget = () => {
+import { Link } from "react-router-dom";
+
+const CartWidget = () => {
   return (
     <>
-      <h4>Mi carrito</h4>
+      <Link to="/carrito">
+        <i className="bx bx-shopping-bag" id="cart-icon">
+          <span id="counter">0</span>
+        </i>
+      </Link>
     </>
   );
 };
 
-export default CardWidget;
+export default CartWidget;

@@ -1,9 +1,11 @@
 // UI Settings.
 @import "./base/variables";
 @import "./base/settings";
-
+@import "../../src/components/app.scss";
 // Screens.
 @import "./base/mixins";
 
 // Components.
 @import "./components/header";
+@import "./components/ItemCount.scss";
+@import "./components/cards";

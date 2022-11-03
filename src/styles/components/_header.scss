@@ -1,64 +1,80 @@
-.header {
-  position: fixed;
-  top: 0;
-  left: 0;
+header {
+  // position: fixed;
+  // top: 0;
+  // left: 0;
   width: 100%;
-  background-color: $white;
-  box-shadow: 1px 1px 8px #111;
-
-  &__top {
-    background-color: $header-top;
-    padding: 4px 0;
-    text-align: center;
-    font-weight: 300;
-    color: #111;
-    font-size: 0.9em;
-  }
-  #cart-icon {
-    font-size: 1.8em;
-    cursor: pointer;
-  }
-  #counter {
-    font-size: 0.7em;
-    font-weight: 500;
-    font-family: $ubuntu-font;
-  }
-}
-
-.nav {
-  // border: 1px solid rebeccapurple;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  padding: 20px 0;
+  justify-content: center;
+  height: 80px;
+  padding: 0 2rem;
+  background-color: #29335c;
+  color: #eee;
+}
 
-  &__logo {
-    font-size: 2em;
-    color: $header-top;
+nav {
+
+  a {
+    margin: 0 1rem;
+    color: #eee;
+    text-decoration: none;
+    
+    &:hover {
+      color: #1b0657;
+    }
   }
 }
-.navbar {
-  width: 60%;
-  height: 10vh;
-  display: flex;
-  justify-content: space-between;
+.nav-btn {
+  padding: 5px;
+  cursor: pointer;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: #eee;
+  visibility: hidden;
+  opacity: 0;
+  font-size: 1.5rem;
+}
+#cart-icon {
+  font-size: 1.7em;
+}
+#counter {
+  font-size: 0.8em;
+  padding: 0;
+  margin: 0;
+  font-family: $ubuntu-font;
+}
 
-  &__items {
+@media (max-width: 1024px) {
+  header .nav-btn {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  header nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
     align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    background-color: #29335c;
+    transition: 1s;
+    transform: translateY(-100vh);
   }
-  &__link {
-    position: relative;
-    font-size: 1.3em;
-    color: $black;
-    display: block;
-    letter-spacing: 0.8px;
-    margin: 0 1.2em;
+  header .responsive_nav {
+    transform: none;
   }
-}
-.detalle {
-  margin-top: 10rem;
-  text-align: center;
-  font-size: 2em;
+  nav .nav-close-btn {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+  }
+  nav a {
+    font-size: 1.5rem;
+  }
 }
