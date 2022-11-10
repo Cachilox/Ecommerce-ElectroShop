@@ -12,7 +12,8 @@ $breakpoints-up: (
 $breakpoints-down: (
   "small": "27em",
   "medium": "44.5em",
-  "large": "64em",
+  "navbar": "56em",
+  "large": "64em"
 );
 
 @mixin breakpoints-up($size) {

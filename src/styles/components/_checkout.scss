@@ -1,0 +1,41 @@
+form {
+    display: flex;
+    gap: 1.2em;
+    flex-direction: column;
+    margin: 0 auto;
+    width: 80%;
+    max-width: 600px;
+}
+
+.form-label {
+    display: flex;
+    gap: 1em;
+    display: block;
+    text-align: center;
+}
+
+form input {
+    width: 100%;
+    margin-top: 0.7rem;
+    padding: 0.5rem;
+    border-radius: 5px;
+    border: 0.5px solid rgb(203, 203, 203);
+}
+
+.checkout {
+    text-align: center;
+    font-size: 2em;
+    margin-bottom: 2rem;
+}
+
+.btn-checkout {
+    display: block;
+    margin: 2rem auto 0 auto;
+    width: fit-content;
+    padding: 0.4rem 1rem;
+    border-radius: 5px;
+    border: none;
+    background-color: rgb(43, 111, 201);
+    color: white;
+    cursor: pointer;
+}

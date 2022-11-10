@@ -1,25 +1,30 @@
-.card {
-    width: 18rem;
-    margin-top: 7rem;
-    // margin: 4px;
-    z-index: -2;
-}
-
 .itemList {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 2em;
-    // grid-template-columns: 1fr;
-    // gap: 1em;
-    // place-items: center ;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 1rem;
 }
 
-.detalle {
-    text-align: center;
-    font-size: 1.8em;
+@media (min-width: 400px) {
+  .itemList {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
-.detalleProd {
-    max-width: 540px;
+@media (min-width: 730px) {
+  .itemList {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
+
+@media (min-width: 1024px) {
+  .itemList {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.darkMode {
+  background-color: #222;
+  color: #fff;
+  transition: background-color 1s ease;
+}
+

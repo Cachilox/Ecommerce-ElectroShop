@@ -1,6 +1,12 @@
-import React from "react";
+import ItemCount from "../ItemCount/ItemCount";
+import {Link} from 'react-router-dom';
 
-function DetalleProducto({ producto }) {
+function ItemDetail({ producto }) {
+
+  const onAdd = (count) => {
+    console.log(count);
+  }
+
   return (
     <div>
       <img src={`../img/${producto.img}`} className="card-img-top" alt={`${producto.nombre}`} />
@@ -10,10 +16,12 @@ function DetalleProducto({ producto }) {
         <p className="card-text">Modelo: {producto.modelo}</p>
         <p className="card-text">Precio: ${producto.precio}</p>
         <p className="card-text">Stock: {producto.stock}</p>
-        <button className="btn btn-dark">Agregar al carrito</button>
+        <ItemCount stock = {producto.stock} onAdd = {onAdd}/>
+        <button className="btn btn-secondary"><Link to="/cart">Finalizar compra</Link></button>
+        
       </div>
     </div>
   );
 }
 
-export default DetalleProducto;
+export default ItemDetail;

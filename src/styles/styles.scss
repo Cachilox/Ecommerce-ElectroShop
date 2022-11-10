@@ -6,6 +6,9 @@
 @import "./base/mixins";
 
 // Components.
+@import "../components/app.scss";
 @import "./components/header";
 @import "./components/ItemCount.scss";
 @import "./components/cards";
+@import "./components/modalNav";
+@import "./components/checkout"

@@ -1,6 +1,7 @@
 [
     {
         "id": 1,
+        "idCategoria" : 3,
         "nombre": "Notebook",
         "marca": "Lenovo",
         "modelo": "Y510P",
@@ -10,6 +11,7 @@
     },
     {
         "id": 2,
+        "idCategoria" : 1,
         "nombre": "Celular",
         "marca": "Xiomi",
         "modelo": "Mi-9",
@@ -19,6 +21,7 @@
     },
     {
         "id": 3,
+        "idCategoria" : 2,
         "nombre": "Smart Tv",
         "marca": "Novatech",
         "modelo": "50D1U",
@@ -28,6 +31,7 @@
     },
     {
         "id": 4,
+        "idCategoria" : 4,
         "nombre": "Camara Deportiva",
         "marca": "iQual",
         "modelo": "C40",
@@ -37,6 +41,7 @@
     },
     {
         "id": 5,
+        "idCategoria" : 4,
         "nombre": "Mouse",
         "marca": "Logitech",
         "modelo": "G502",
@@ -46,6 +51,7 @@
     },
     {
         "id": 6,
+        "idCategoria" : 4,
         "nombre": "Auriculares",
         "marca": "Motorola",
         "modelo": "Pulse Escape",
@@ -55,6 +61,7 @@
     },
     {
         "id": 7,
+        "idCategoria" : 1,
         "nombre": "iPhone",
         "marca": "Apple",
         "modelo": "X Silver",
@@ -64,6 +71,7 @@
     },
     {
         "id": 8,
+        "idCategoria" : 2,
         "nombre": "Apple TV",
         "marca": "Apple ",
         "modelo": "32 Gb",
@@ -73,6 +81,7 @@
     },
     {
         "id": 9,
+        "idCategoria" : 4,
         "nombre": "Parlante",
         "marca": "Kalley",
         "modelo": "SPK200",
@@ -82,12 +91,33 @@
     },
     {
         "id": 10,
+        "idCategoria" : 3,
         "nombre": "Mac",
         "marca": "Apple",
         "modelo": "Air",
         "precio": 13000,
         "stock": 25,
         "img": "mac-air.jpg"
+    },
+    {
+        "id": 11,
+        "idCategoria" : 3,
+        "nombre": "Notebook ",
+        "marca": "DELL Inspiron",
+        "modelo": "I3515",
+        "precio": 181300,
+        "stock": 5,
+        "img": "notebook-dell-inspiron.png"
+    },
+    {
+        "id": 12,
+        "idCategoria" : 3,
+        "nombre": "Notebook Asus TUF",
+        "marca": "Asus",
+        "modelo": "FX506",
+        "precio": 357700,
+        "stock": 15,
+        "img": "notebook-asus-tuf.png"
     }
     
 ]

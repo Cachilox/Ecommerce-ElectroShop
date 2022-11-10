@@ -1,0 +1,47 @@
+.card {
+  border: 1px solid rgb(224, 226, 226);
+  padding: 1rem;
+  margin: 2rem auto;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  max-width: 250px;
+  width: 100%;
+  margin-bottom: 0.5rem;
+  // position: relative;
+
+  &__marca {
+    font-size: 0.9rem;
+    color: gray;
+    margin-bottom: 0.5rem;
+  }
+  &__title {
+    font-size: 1.1em;
+    margin-bottom: 0.5rem;
+    text-transform: capitalize;
+  }
+  &__price {
+    color: green;
+    margin-bottom: 0.6rem;
+  }
+  &__active-btn {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    text-align: center;
+    justify-content: center;
+    border-top: 1px solid rgb(187, 185, 185);
+    padding-top: 0.5rem;
+  }
+}
+
+.btn-blue {
+    margin-top: 0.3rem;
+    background-color: $header-top;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+    padding: 0.4rem 1rem;
+    text-decoration: none;
+}

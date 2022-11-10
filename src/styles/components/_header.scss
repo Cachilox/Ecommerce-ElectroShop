@@ -3,78 +3,57 @@ header {
   // top: 0;
   // left: 0;
   width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 80px;
-  padding: 0 2rem;
-  background-color: #29335c;
-  color: #eee;
-}
-
-nav {
-
-  a {
-    margin: 0 1rem;
-    color: #eee;
-    text-decoration: none;
-    
-    &:hover {
-      color: #1b0657;
-    }
-  }
-}
-.nav-btn {
-  padding: 5px;
-  cursor: pointer;
-  background: transparent;
-  border: none;
-  outline: none;
-  color: #eee;
-  visibility: hidden;
-  opacity: 0;
-  font-size: 1.5rem;
+  background: $header-top;
 }
 #cart-icon {
-  font-size: 1.7em;
+  color: white;
+  font-size: 1.7rem;
+  cursor: pointer;
 }
 #counter {
-  font-size: 0.8em;
-  padding: 0;
-  margin: 0;
+  font-size: 0.7em;
+  font-weight: 500;
   font-family: $ubuntu-font;
+  margin: 0;
+  padding: 5px;
+}
+.bx-menu {
+  font-size: 1.7em;
+  cursor: pointer;
+  display: none;
+  @include breakpoints-down(navbar){
+    display: block;
+  }
 }
 
-@media (max-width: 1024px) {
-  header .nav-btn {
-    visibility: visible;
-    opacity: 1;
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 0;
+}
+
+.navbar {
+  // border: 1px solid red;
+  width: 60%;
+  height: 10vh;
+  display: flex;
+  justify-content: space-around;
+  @include breakpoints-down(navbar){
+    display: none;
   }
 
-  header nav {
-    position: fixed;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
+  &__items {
     display: flex;
-    flex-direction: column;
+    justify-content: space-between;
     align-items: center;
-    justify-content: center;
-    gap: 1.5rem;
-    background-color: #29335c;
-    transition: 1s;
-    transform: translateY(-100vh);
   }
-  header .responsive_nav {
-    transform: none;
-  }
-  nav .nav-close-btn {
-    position: absolute;
-    top: 2rem;
-    right: 2rem;
-  }
-  nav a {
-    font-size: 1.5rem;
+  &__link {
+    position: relative;
+    font-size: 1.1em;
+    color: $white;
+    display: block;
+    margin: 0 1.2rem;
+    padding: 0 15px;
   }
 }

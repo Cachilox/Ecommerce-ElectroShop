@@ -9,6 +9,9 @@
 
 body {
   font-family: $ubuntu-font;
+  background-color: #fff;
+  color: #111;
+  transition: transform 2s ease;
 }
 
 .container {
@@ -17,6 +20,7 @@ body {
   width: 100%;
   padding: 1em;
 }
+
 img {
   width: 100%;
 }

@@ -1,38 +1,23 @@
-// import { navBarOptions } from "../helpers/strings";
-import { Link } from "react-router-dom"
-import { useRef } from "react"
-import { FaBars, FaTimes } from "react-icons/fa"
-import CartWidget from "../CartWidget/CartWidget"
+// import { FaBars, FaTimes } from "react-icons/fa";
+import CartWidget from "../CartWidget/CartWidget";
+import Secciones from "./Secciones/Secciones";
+// import ModalNav from "./Secciones/ModalNav";
 
-const Navbar = () => {
-  const navRef = useRef();
-
-  const showNavbar = () => {
-    navRef.current.classList.toggle("responsive_nav")
-  }
-
+const Navbar = () => {  
   return (
     <header>
-      <button className="nav-btn" onClick={showNavbar}>
-      <FaBars/>
-      </button>
-      <Link to="/">
-        <h3>Electro Shop</h3>
-      </Link>
-      <nav ref={navRef}>
-        <Link to="/">
-          Home
-        </Link>
-        <a href="/">Smartphone</a>
-        <a href="/">Netbook</a>
-        <a href="/">Tv</a>
-        <button className="nav-btn nav-close-btn" onClick={showNavbar}>
-          <FaTimes />
-        </button>
-        <CartWidget />
-      </nav>
-    </header>
-  )
-}
+      <div className="nav container">
+        
+        <Secciones />
 
-export default Navbar
+        {/* <!-- Start modal navbar --> */}
+        {/* <ModalNav /> */}
+
+        {/* <!-- CART ICON --> */}
+        <CartWidget />
+      </div>
+    </header>
+  );
+};
+
+export default Navbar;

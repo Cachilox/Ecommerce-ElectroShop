@@ -1,25 +1,31 @@
 import "./app.scss";
-import {BrowserRouter, Routes, Route} from "react-router-dom"
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+
+// Context
+import { DarkModeProvider } from "../context/darkMode";
+
+// Components
 import Navbar from "./Navbar/Navbar";
-// import ItemListContainer from "./ItemListContainer/ItemListContainer";
-// import ItemCount from "./ItemCount/ItemCount";
-import Home from "./Home/Home";
-import Producto from "./Producto/Producto";
-import Carrito from "./Carrito/Carrito";
+import ItemDetailContainer from "./ItemDetailContainer/ItemDetailContainer";
+import Cart from "./Cart/Cart";
+import ItemListContainer from "./ItemListContainer/ItemListContainer";
 
 function App() {
   return (
     <>
+      <DarkModeProvider>
       <BrowserRouter>
         <Navbar />
 
         <Routes>
-          <Route path='/' element={<Home/>}/>
-          <Route path='/producto/:id' element={<Producto/>} />
-          <Route path='/carrito' element={<Carrito/>} />
+          <Route path="/" element={<ItemListContainer />} />
+          <Route path="/product/:id" element={<ItemDetailContainer />} />
+          <Route path="/cart" element={<Cart />} />
+          <Route path="/category/:category" element={<ItemListContainer />} />
         </Routes>
 
       </BrowserRouter>
+      </DarkModeProvider>
     </>
   );
 }

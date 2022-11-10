@@ -1,33 +1,28 @@
 import { useState } from "react";
 import "../../styles/components/ItemCount.scss";
+// import {FaPlus} from 'react-icons/fa'
 
-const ItemCount = () => {
+const ItemCount = ({ stock, onAdd }) => {
   const [itemCount, SetItemCount] = useState(1);
 
-  const modificarContador = (operacion) => {
-    if (operacion === "+") {
-      if (itemCount < 10) 
-      SetItemCount(itemCount + 1);
-    } else {
-      if (itemCount > 1) 
-      SetItemCount(itemCount - 1);
-    }
-  };
+  const incrementar = () => itemCount < stock && SetItemCount(itemCount + 1);
+  const decrementar = () => itemCount > 1 && SetItemCount(itemCount - 1);
 
-  function onAdd(itemCount) {
-    console.log(`La cantidad de productos agregado al carrito es ${itemCount}`);
-  }
+  const agregarAlCarrito = () => {
+    onAdd(itemCount);
+  };
 
   return (
     <div className="count">
       <div className="count__elements">
-        <button onClick={() => modificarContador("+")}>+</button>
+        <button onClick={decrementar}>-</button>
         <span>{itemCount}</span>
-        <button onClick={() => modificarContador("-")}>-</button>
+        <button onClick={incrementar}>+</button>
+        <button onClick={agregarAlCarrito} className="btn btn-dark">
+          Add to cart
+        </button>
       </div>
-      <button onClick={() => onAdd(itemCount)} className="count__add-cart">
-        Agregar al carrito
-      </button>
+      {/* <button onClick={() => onAdd(itemCount)} className="count__add-cart"></button> */}
     </div>
   );
 };
