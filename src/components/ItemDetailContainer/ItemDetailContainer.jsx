@@ -19,7 +19,7 @@ const ItemDetailContainer = () => {
   }, [id]);
 
   return (
-    <div className={darkMode ? "card darkMode" : "card"}>
+    <div className={darkMode ? "darkMode" : ""}>
       <ItemDetail producto={producto} />
     </div>
   );

@@ -1,0 +1,64 @@
+
+.count {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2rem;
+
+  &__add-cart {
+    margin: 0 1.8rem;
+    color: $header-top;
+    border: 1px solid $header-top;
+    border-radius: 5px;
+    padding: 0.3rem 2.4rem;
+  }
+  &__btn {
+    padding: 0.5em 0.5em;
+    height: 2.4rem;
+    border: none;
+    font-size: 1em;
+    cursor: pointer;
+  }
+  &__itemCount {
+    padding: 10px;
+    font-size: 1.5em;
+  }
+  &__elements {
+    border: 1px solid rgba(0, 0, 0, 0.45);
+    border-radius: 10px;
+    overflow: hidden;
+
+    &:hover {
+      border: 1px solid #000;
+    }
+  }
+  &__btn-add {
+    margin-left: 20px;
+    box-shadow: 0px 1px 0px 0px #f0f7fa;
+    background: linear-gradient(to bottom, #33bdef 5%, #019ad2 100%);
+    background-color: #33bdef;
+    border-radius: 12px;
+    border: 1px solid #057fd0;
+    display: inline-block;
+    cursor: pointer;
+    color: #ffffff;
+    font-family: Arial;
+    font-size: 15px;
+    font-weight: bold;
+    padding: 10px 25px;
+    text-decoration: none;
+    text-shadow: 0px -1px 0px #5b6178;
+    @include breakpoints-up(medium) {
+      padding: 10px 50px;
+    }
+    &:hover {
+      background: linear-gradient(to bottom, #019ad2 5%, #33bdef 100%);
+      background-color: #019ad2;
+    }
+    &:active {
+      position: relative;
+      top: 1px;
+    }
+
+  }
+}

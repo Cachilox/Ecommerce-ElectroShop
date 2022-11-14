@@ -1,6 +1,6 @@
 export const navBarOptions = [
-  { category: "Inicio", id: "inicio", href: "./index.html" },
-  { category: "Notebooks", id: "notebooks", href: "./index.html" },
-  { category: "SmartPhone", id: "smartphone", href: "./index.html" },
-  { category: "Tv", id: "Tv", href: "./index.html" },
+  { category: "Home", id: 1, to: "/" },
+  { category: "Smartphone", id: 2, to: "/category/1" },
+  { category: "Tv", id: 3, to: "/category/2" },
+  { category: "Notebook", id: 4, to: "/category/3" },
 ];

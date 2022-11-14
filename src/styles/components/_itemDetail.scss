@@ -1,0 +1,32 @@
+.cardItemDetail {
+    margin: 0 auto;
+    padding: 4rem 1.6em;
+    max-width: 850px;
+    @include breakpoints-up(medium){
+        display: flex;
+        gap: 1rem;
+    }
+
+    &__title {
+        text-align: center;
+        margin-top: 2rem;
+        font-size: 1.2em;
+    }
+    &__description {
+        margin-top: 2rem;
+        text-align: center;
+    }
+    &__price {
+        margin-top: 2rem;
+        color: green;
+        text-align: center;
+        font-size: 1.2em;
+    }
+    &__img {
+        width: 100%;
+        max-width: 350px;
+        display: block;
+        margin: 0 auto;
+    }
+}
+

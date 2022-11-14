@@ -1,12 +1,29 @@
 header {
-  // position: fixed;
-  // top: 0;
-  // left: 0;
+  position: sticky;
+  top: 0;
+  left: 0;
   width: 100%;
   background: $header-top;
+  z-index: 2;
+}
+.title-nav {
+  font-family: 'Inter', sans-serif;
+  color: $white;
+  font-size: 1.7em;
+}
+.nav-top {
+  background-color: #B0B7CB;
+  text-align: center;
+  font-family: $ubuntu-font;
+  padding: 4px;
+  color: $white;
+
+  span {
+    font-weight: 600;
+  }
 }
 #cart-icon {
-  color: white;
+  color: $white;
   font-size: 1.7rem;
   cursor: pointer;
 }
@@ -18,6 +35,7 @@ header {
   padding: 5px;
 }
 .bx-menu {
+  color: $white;
   font-size: 1.7em;
   cursor: pointer;
   display: none;

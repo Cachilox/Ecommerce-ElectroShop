@@ -1,23 +1,27 @@
-import ItemCount from "../ItemCount/ItemCount";
+import {useContext} from 'react';
 import {Link} from 'react-router-dom';
+import {CartContext} from '../../context/ContextCart';
+import ItemCount from "../ItemCount/ItemCount";
 
 function ItemDetail({ producto }) {
 
+  const {cart ,isInCart, addItem} = useContext(CartContext)
+
   const onAdd = (count) => {
-    console.log(count);
+    addItem(producto, count)
+
   }
 
   return (
-    <div>
-      <img src={`../img/${producto.img}`} className="card-img-top" alt={`${producto.nombre}`} />
+    <div className='cardItemDetail'>
+      <img src={`../img/${producto.img}`} className="cardItemDetail__img" alt={producto.nombre} />
       <div className="card-body">
-        <h5 className="card-title">{producto.nombre}</h5>
-        <p className="card-text">Marca: {producto.marca}</p>
-        <p className="card-text">Modelo: {producto.modelo}</p>
-        <p className="card-text">Precio: ${producto.precio}</p>
-        <p className="card-text">Stock: {producto.stock}</p>
+        <h5 className="cardItemDetail__title">{producto.nombre}</h5>
+        <p className="cardItemDetail__description">{producto.description}</p>
+        <p className="cardItemDetail__price">Precio: ${producto.precio}</p>
+        {/* <p className="card-text">Stock: {producto.stock}</p> */}
         <ItemCount stock = {producto.stock} onAdd = {onAdd}/>
-        <button className="btn btn-secondary"><Link to="/cart">Finalizar compra</Link></button>
+        {/* <button className="btn btn-secondary"><Link to="/cart">Finalizar compra</Link></button> */}
         
       </div>
     </div>
