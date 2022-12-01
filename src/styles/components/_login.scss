@@ -1,0 +1,121 @@
+.form-login {
+    background-color: #fff;
+    margin: auto;
+    max-width: 500px;
+    padding: 2.2em 3em;
+    border-radius: 10x;
+    box-shadow: 0 5px 10px -5px rgba(0 0 0 / 30%);
+    text-align: center;
+
+    &__title {
+        font-size: 2rem;
+        margin-bottom: 0.5em;
+        
+    }
+    &__paragraph {
+        font-weight: 300;
+    }
+    &__link {
+        color: #111;
+        font-weight: 500;
+    }
+    &__error {
+        color: #ff0000;
+        text-align: center;
+    }
+    &__submit {
+        background: $btn-prod;
+        color: $white;
+        font-weight: 500;
+        font-size: 1rem;
+        padding: 0.8em 0;
+        border: none;
+        border-radius: 0.5em;
+        font-family: $ubuntu-font;
+        cursor: pointer;
+    }
+
+    &__container {
+        margin-top: 3em;
+        display: grid;
+        gap: 2.1em;
+
+        .form-group {
+            position: relative;
+
+            .inputGroup {
+                width: 100%;
+                background: none;
+                color: #706c6c;
+                font-size: 1rem;
+                padding: .6em .3em;
+                border: none;
+                outline: none;
+                border-bottom: 1px solid #5757577e;
+                font-family: $ubuntu-font;
+                &:not(:placeholder-shown) {
+                    color: #111;
+                }
+            }
+
+            .inputGroup:focus + .label,
+            .inputGroup:not(:placeholder-shown) + .label {
+                transform: translateY(-12px) scale(.7);
+                transform-origin: left top;
+                color: $btn-prod;
+            }
+
+            .label {
+                color: #837d7df1;
+                cursor: pointer;
+                position: absolute;
+                top: 0;
+                left: 5px;
+                transform: translateY(10px);
+                transition: transform 0.5s, color .3s;
+            }
+            .form-line {
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 100%;
+                height: 1px;
+                background-color: $btn-prod;
+                transform: scale(0);
+                transform: left bottom;
+                transition: transform .4s;
+            }
+            .inputGroup:focus ~ .form-line,
+            .inputGroup:not(:placeholder-shown) ~ .form-line {
+                transform: scale(1);
+            }
+        }
+        .login-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 1em;
+        }
+        .loginGoogle {
+            background-color: #1767D0;
+            color: $white;
+            cursor: pointer;
+            font-weight: 500;
+            font-size: 1rem;
+            padding: 0.8em 0;
+            border: none;
+            border-radius: 0.5em;
+            font-family: $ubuntu-font;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.8em;
+
+            .icon-google {
+                font-size: 1.3em;
+                background-color: #fff;
+                border-radius: 0.5em;
+            }
+        }
+    }
+
+}

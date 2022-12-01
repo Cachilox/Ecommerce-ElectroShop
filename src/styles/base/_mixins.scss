@@ -2,17 +2,22 @@
 @media (min-width: 64em) {
 }
 
-// 640px, 1024px, 1400px
+// 640px, 768px, 1024px, 1400px
 $breakpoints-up: (
   "medium": "40em",
+  "breakProd": "49em",
+  "breakFooter": "58em",
   "large": "64em",
   "xlarge": "87.5em",
 );
 
 $breakpoints-down: (
+  "modalNav": "23.5em",
   "small": "27em",
+  "nav-small": "39em",
   "medium": "44.5em",
   "navbar": "56em",
+  "footer": "59em",
   "large": "64em"
 );
 
@@ -25,5 +30,24 @@ $breakpoints-down: (
 @mixin breakpoints-down($size) {
   @media (max-width: map-get($breakpoints-down, $size)) {
     @content;
+  }
+}
+
+@mixin swiper-buttons($a, $b, $c, $d, $left, $right) {
+  --swiper-navigation-size: 20px;
+  --swiper-theme-color: #5C5FF7;
+  background-color: $white;
+  height: 70px;
+  width: 50px;
+  margin-top: -35px;
+  border-radius: $a $b $c $d;
+  left: $left;
+  right: $right;
+  opacity: 0;
+  transition: opacity 0.75s;
+  @include breakpoints-down(small){
+    height: 55px;
+    width: 35px;
+    margin-top: -10px;
   }
 }

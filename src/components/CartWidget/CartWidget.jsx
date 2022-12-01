@@ -1,12 +1,17 @@
 import { Link } from "react-router-dom";
+import { useContext } from "react";
+import { CartContext } from "../../context/ContextCart";
+import {TiShoppingCart} from "react-icons/ti"
 
 const CartWidget = () => {
+  const {getItemQuantity} = useContext(CartContext)
   return (
     <>
       <Link to="/cart">
-        <i className="bx bx-shopping-bag" id="cart-icon">
-          <span id="counter">0</span>
-        </i>
+        <div className="cart-icon"> 
+          <TiShoppingCart />
+          {getItemQuantity() >=1 && <span id="counter">{getItemQuantity()}</span> }
+        </div>
       </Link>
     </>
   );

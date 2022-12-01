@@ -1,4 +1,6 @@
 import Item from "../item/Item";
+import "swiper/css";
+import "swiper/css/free-mode";
 
 const ItemList = ({ productsList }) => {
   return (
@@ -9,5 +11,4 @@ const ItemList = ({ productsList }) => {
     </>
   );
 };
-
 export default ItemList;

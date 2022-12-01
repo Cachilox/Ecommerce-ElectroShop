@@ -1,5 +1,5 @@
 .card {
-  border: 1px solid rgb(224, 226, 226);
+  border: 1px solid rgba(224, 226, 226, 0.856);
   padding: 1rem;
   margin: 2rem auto;
   display: flex;
@@ -8,7 +8,11 @@
   max-width: 250px;
   width: 100%;
   margin-bottom: 0.5rem;
-  // position: relative;
+
+  &__img {
+    width: 13.4rem;
+    height: 11.3rem;
+  }
 
   &__marca {
     font-size: 0.9rem;
@@ -16,13 +20,14 @@
     margin-bottom: 0.5rem;
   }
   &__title {
-    font-size: 1.1em;
-    margin-bottom: 0.5rem;
+    font-size: 1em;
+    margin: 0.5rem 0 0.5rem 0;
     text-transform: capitalize;
   }
   &__price {
     color: green;
     margin-bottom: 0.6rem;
+    font-size: 1.2em;
   }
   &__active-btn {
     display: flex;
@@ -37,11 +42,20 @@
 
 .btn-blue {
   margin-top: 0.3rem;
-  background-color: $header-top;
+  background-color: $btn-prod;
   border: none;
   border-radius: 5px;
   color: #fff;
   cursor: pointer;
   padding: 0.4rem 1rem;
   text-decoration: none;
+  transition: background 0.2s ease;
+
+  &:hover {
+    background: #6364c2f5;
+  }
+  &:active {
+    position: relative;
+    top: 1px;
+  }
 }

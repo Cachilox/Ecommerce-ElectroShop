@@ -1,8 +1,10 @@
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { navBarOptions } from "../../helpers/strings";
-function Secciones() {
+import Hamburger from "hamburger-react"
 
+function Secciones() {
+  const [isOpen, setOpen] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)
 
   const [size, setSize] = useState({
@@ -34,7 +36,7 @@ function Secciones() {
 
   return (
     <>
-      <i onClick={menuToggleHandler} className="bx bx-menu"></i>
+      <i className="hamburger-react" onClick={menuToggleHandler}><Hamburger toggled={menuOpen} toggle={setOpen} size="22"/></i>
 
       <Link to="/">
         <h1 className="title-nav">Electro Shop</h1>
@@ -53,20 +55,12 @@ function Secciones() {
 
       {/* MODAL NAVBAR */}
       <div className="background"></div>
-      <div
-        className={`modal-navbar ${
-          menuOpen && size.width < 896 ? "activeNav" : ""
-        }`}
-      >
-        <i
-          onClick={menuToggleHandler}
-          className="bx bx-x modal-navbar__closed"
-        ></i>
+      <div className={`modal-navbar ${menuOpen && size.width < 896 ? "activeNav" : ""}`}>
         <ul className="modal-navbar__items">
-        {navBarOptions.map(navBarOption => 
+          {navBarOptions.map(navBarOption => 
           <li key={navBarOption.id}>
             <Link onClick={menuToggleHandler} className="modal-navbar__links" to={navBarOption.to}>
-              {navBarOption.category}
+              {navBarOption.icon || <img className="videoCard-icon" src={navBarOption.iconN} alt="videoCard"/>}  {navBarOption.category}
             </Link>
           </li>)}
         </ul>

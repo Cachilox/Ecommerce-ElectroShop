@@ -1,0 +1,171 @@
+.cartPage {
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1.4rem;
+
+    &__top {
+        display: flex;
+        align-items: center;
+        margin:  0 auto;
+        gap: 1.4em;
+
+        button {
+            background: #e20404;
+            height: 100%;
+            color: $white;
+            font-size: 1.1em;
+            border: none;
+            padding: 0.3rem;
+            border-radius: 5px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+        }
+    }
+
+    &__cart {
+        text-align: center;
+        margin: 1.5rem 0;
+    }
+
+    &__information {
+        margin-left: 3px;
+        @include breakpoints-up(breakProd) {
+            margin-left: 6px;
+        }
+    }
+
+    &__delete {
+        margin-top: 0.4rem;
+        border: none;
+        color: red;
+        padding: 0rem 0.8rem;
+        font-size: 1.5rem;
+        cursor: pointer;
+    }
+
+    &__sigleProduct {
+        overflow: hidden;
+        padding: 13px;
+        display: flex;
+        align-items: center;
+        box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+        border-bottom: 2px solid gray;
+        margin: 0 auto;
+
+        img {
+            width: 100%;
+            min-width: 70px;
+            max-width: 70px;
+            @include breakpoints-up(breakProd) {
+                max-width: 100px;
+            }
+        }
+    }
+
+
+    &__title {
+        font-size: 0.8em;
+        @include breakpoints-up(breakProd) {
+            font-size: 1em;
+        }
+    }
+    &__free {
+        color: #008000;
+        font-weight: 500;
+        margin-top: 0.35rem;
+        display: flex;
+        gap: 1em;
+
+        span:nth-child(2) {
+            color: gray;
+        }
+    }
+
+    &__price {
+        margin-top: .6rem;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        font-weight: 600;
+        gap: .3rem;
+        font-size: 0.9em;
+        @include breakpoints-up(breakProd) {
+            flex-direction: row;
+            gap: 1rem;
+            align-items: center;
+            font-size: 1em;
+            margin-top: 1.4rem;
+        }
+    }
+}
+
+.summary {
+    margin-top: 2.2rem;
+    padding: 13px;
+    font-size: 1.2em;
+    font-weight: 600;
+    border: 1.8px solid gray;
+    border-radius: 5px;
+    @include breakpoints-up(breakProd) {
+        width: 30rem;
+        margin: auto;
+        margin-top: 2.5rem;
+    }
+
+
+    &__totalCart {
+        display: flex;
+        justify-content: space-between;
+    }
+    &__btn {
+        margin-top: 1.3rem;
+        width: 100%;
+        background-color: #3483fa;
+        color: $white;
+        font-size: 1.1rem;
+        padding: 13px 32px 12px;
+        border-radius: 7px;
+        cursor: pointer;
+        border: none;
+    }
+}
+
+.cart-empty {
+    text-align: center;
+    margin-top: 5.6rem;
+    height: 55vh;
+  
+    h2 {
+      margin-bottom: 0.6rem;
+    }
+  
+    p {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.3em;
+      color: #5C5FFA;
+      margin-top: 0.7rem;
+      cursor: pointer;
+    }
+    span {
+      color: gray;
+    }
+    .arrowLeft {
+      font-size: 2rem;
+    }
+    @include breakpoints-up(medium) {
+        h2 {
+            font-size: 2.2em;
+        }
+        span {
+            font-size: 1.3em;
+            font-weight: 500;
+        }
+        p {
+            font-size: 1.5em;
+        }
+    }
+  }

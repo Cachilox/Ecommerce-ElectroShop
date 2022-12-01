@@ -2,7 +2,7 @@ import { useState, createContext } from "react";
 
 const DarkModeContext = createContext();
 
-const DarkModeProvider = (props) => {
+const DarkModeProvider = ({children}) => {
   const [darkMode, setDarkMode] = useState(false);
 
   const toggleDarkMode = () => {
@@ -11,7 +11,7 @@ const DarkModeProvider = (props) => {
 
   return (
     <DarkModeContext.Provider value={{ darkMode, toggleDarkMode }}>
-      {props.children}
+      {children}
     </DarkModeContext.Provider>
   );
 };

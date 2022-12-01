@@ -4,7 +4,6 @@
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   overflow: hidden;
 
-
   &__slide {
     img {
       width: 100%;
@@ -14,15 +13,45 @@
   }
 }
 
-.mySwiper {
+.Swiper {
   width: 100%;
   height: 40vh;
   @include breakpoints-up(medium) {
     height: 65vh;
   }
+  .swiper-button-prev {
+    @include swiper-buttons(0, 0.25rem, 0.25rem, 0, -10px, 0)
+
+  }
+  .swiper-button-next {
+    @include swiper-buttons(0.25rem, 0, 0, 0.25rem, -100, -10px)
+  }
+  .swiper-pagination-bullet {
+    box-shadow: inset 0 0 0 2px $white;
+  }
+  .swiper-pagination-bullet-active {
+    box-shadow:  0 0 0 2px $white;
+  }
 }
 
-.swiper-button-next,
-.swiper-button-prev {
-  color: rgb(41, 195, 223) !important;
+.SwiperProd {
+  max-width: 22rem;
+  margin: 0 auto;
+  @include breakpoints-down(small) {
+    max-width: 16rem;
+  }
+  @include breakpoints-up(medium) {
+    max-width: 28rem;
+  }
 }
+
+
+.Swiper:hover .swiper-button-prev  {
+  opacity: 1;
+}
+.Swiper:hover .swiper-button-next {
+  opacity: 1;
+}
+
+
+

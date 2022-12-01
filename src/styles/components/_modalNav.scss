@@ -1,15 +1,18 @@
 .modal-navbar {
   position: absolute;
-  top: 0;
+  top: 7.4rem;
   left: -100%;
-  width: 40%;
+  width: 55%;
   height: 100vh;
   overflow-y: auto;
   overflow-x: hidden;
-  background-color: $white;
+  background-color: #1f2022;
   padding: 20px 16px;
-  transition: left 1s ease-in-out;
+  transition: left 0.5s ease-in-out;
   z-index: 2;
+  @include breakpoints-down(modalNav) {
+    top: 8.3rem;
+  }
 
   &__items {
     display: flex;
@@ -19,16 +22,17 @@
     margin-top: 50px;
   }
   &__links {
-    color: $header-top;
+    color: #d8d1d1;
     font-weight: 700;
     font-size: 1.1em;
-  }
-  &__closed {
-    font-size: 2em;
     display: flex;
-    justify-content: flex-start;
-    cursor: pointer;
+    align-items: center;
+    gap: 0.5rem;
+    &:hover {
+      color: #fff;
+    }
   }
+
 }
 .background {
   position: fixed;
@@ -36,11 +40,11 @@
   left: 0;
   width: 100%;
   height: 100vh;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(37, 37, 37, 0.5);
   display: none;
 }
 
 .modal-navbar.activeNav {
   left: 0;
-  transition: 0.6s;
+  transition: 0.5s;
 }

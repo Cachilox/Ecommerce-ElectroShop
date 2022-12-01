@@ -1,0 +1,106 @@
+.newsletter {
+  margin-top: 3.5rem;
+  background-color: #b0b7cb;
+  padding: 20px 0;
+  box-sizing: content-box;
+
+  &__container {
+    padding: 0 20px;
+    margin: 0 auto;
+  }
+
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: $white;
+    @include breakpoints-up(breakFooter) {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .newsletter-text {
+      &__title {
+        font-size: 3.1em;
+        font-weight: 300;
+        line-height: 1;
+        margin-bottom: 0;
+      }
+      &__desc {
+        margin-top: 0.4rem;
+        font-size: 1.25em;
+      }
+    }
+
+    .newsletter-form {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      max-width: 550px;
+
+      .form-body {
+        padding: 2rem 2rem;
+        position: relative;
+
+        &__p {
+          margin-top: 1rem;
+          line-height: 1.2;
+          font-size: 1.1em;
+          text-align: center;
+          @include breakpoints-up(medium) {
+            text-align: left;
+          }
+        }
+
+        .form-fiels {
+          flex: 1 1 0%;
+          display: flex;
+          gap: 1rem;
+          align-items: center;
+          flex-direction: column;
+          @include breakpoints-up(medium) {
+            flex-direction: row;
+          }
+
+          &__btn {
+            color: #f5f5f5;
+            background-color: #14161b;
+            flex-shrink: 1;
+            width: unset;
+            white-space: nowrap;
+            font-size: 1.2em;
+            padding: 0.7rem 1.5rem;
+            border: none;
+            cursor: pointer;
+            border-radius: 6px;
+            text-align: center;
+            transition: filter 0.3s ease;
+
+            &:hover {
+              filter: opacity(0.9);
+            }
+          }
+
+          .form-field {
+            flex-grow: 1;
+            margin: 0;
+
+            .input-field {
+              min-height: 36px;
+              font-size: 1.1rem;
+              border: none;
+              border-radius: 6px;
+              outline: none;
+              padding: 0.5rem;
+              width: 100%;
+              color: #696969;
+              background-color: #fff;
+            }
+          }
+        }
+      }
+    }
+  }
+}

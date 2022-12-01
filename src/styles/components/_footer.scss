@@ -1,0 +1,125 @@
+.footer {
+    background-color: #000;
+    color: $white;
+    padding: 50px 0 20px 0;
+
+    &__container {
+        max-width: 1200px;
+        margin: 0 auto;
+        border-bottom: 1.7px solid #ccc;
+    }
+
+    &__row {
+        display: flex;
+        flex-wrap: wrap;
+        margin-bottom: 0.7rem;
+    }
+
+    &__col {
+        width: 25%;
+        padding: 0 15px;
+        
+        ul li {
+            margin-bottom: 15px;
+        }
+        .links {
+            color: #ccc;
+            font-size: 1em;
+            text-transform: capitalize;
+            text-decoration: none;
+            font-weight: 300;
+            display: block;
+            text-align: center;
+            transition: all 0.3s ease;
+            &:hover {
+                color: $white;
+                padding-left: 4px;
+            }
+        }
+
+        @include breakpoints-down(footer) {
+            width: 50%;
+            margin-bottom: 30px;
+        }
+        @include breakpoints-down(medium){
+            width: 100%;
+            margin-bottom: 40px;
+        }
+    }
+
+    &__title {
+        font-size: 1.5em;
+        margin-bottom: 15px;
+        font-weight: 600;
+        text-align: center;
+    }
+
+    &__description {
+        line-height: 20px;
+        text-align: center;
+    }
+    &__social-links {
+        text-align: center;
+        a{
+            display: inline-block;
+            height: 40px;
+            width: 40px;
+            background-color: rgb(238, 229, 229);
+            margin: 0 10px 10px 0;
+            text-align: center;
+            line-height: 50px;
+            border-radius: 50%;
+            color: #111;
+            transition: all 0.4 ease;
+            font-size: 1.5em;
+
+            &:hover {
+                color: white;
+                background: linear-gradient(45deg, #405de6, #5851db, #833ab4, #c13584, #e1306c, #fd1d1d);
+            }
+            &:hover:last-child {
+                color: $white;
+                background: hsl(202, 89, 53);
+            }
+            &:hover:first-child {
+                color: $white;
+                background: hsl(213, 89, 52);
+            }
+        }
+    }
+
+}
+.contact {
+    text-align: left;
+    @include breakpoints-down(navbar) {
+        text-align: center;
+    }
+}
+
+
+.metodos-pagos {
+    max-width: 1200px;
+    margin: 1.3rem auto 0.5rem;
+    @include breakpoints-up(breakProd) {
+        display: flex;
+        flex-direction: row;
+        gap: 1rem;
+        justify-content: flex-start;
+
+    }
+    .pagos {
+        font-size: 1em;
+        text-align: center;
+        margin: 1rem 0;
+    }
+    &__card {
+        display: flex;
+        justify-content: center;
+        flex-direction: row;
+        flex-wrap: wrap;
+        img {
+            width: 70px;
+            filter: drop-shadow(0 0 1px $white);
+        }
+    }
+}

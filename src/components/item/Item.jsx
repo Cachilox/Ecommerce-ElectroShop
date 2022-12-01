@@ -1,14 +1,20 @@
 import { Link } from "react-router-dom";
-const Item = ({prod}) => {
+
+const Item = ({ prod }) => {
+  const { name, img, description, price, id } = prod;
   return (
     <div className="card">
-      <img src={`../img/${prod.img}`} className="card-img" alt={prod.nombre} />
+      <img src={img} className="card__img" alt={name} />
       <div className="card-body">
-        <p className="card__marca">{prod.marca}</p>
-        <p className="card__title">{prod.nombre} {prod.modelo}</p>
-        <p className="card__price">$ {new Intl.NumberFormat('de-DE').format(prod.precio)}</p>
+        <p className="card__title">{description}</p>
+        <p className="card__price">
+          ${new Intl.NumberFormat("de-DE").format(price)}
+        </p>
         <div className="card__active-btn">
-          <Link className="btn-blue" to={`/product/${prod.id}`}>Ver producto</Link>
+
+          <Link className="btn-blue"  to={`/product/${id}`}>
+            Ver producto
+          </Link>
         </div>
       </div>
     </div>

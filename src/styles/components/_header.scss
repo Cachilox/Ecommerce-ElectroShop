@@ -6,6 +6,7 @@ header {
   background: $header-top;
   z-index: 2;
 }
+
 .title-nav {
   font-family: 'Inter', sans-serif;
   color: $white;
@@ -15,26 +16,38 @@ header {
   background-color: #B0B7CB;
   text-align: center;
   font-family: $ubuntu-font;
-  padding: 4px;
+  padding: 5px;
   color: $white;
 
   span {
-    font-weight: 600;
+    font-weight: 700;
+  }
+  @include breakpoints-down(small) {
+    font-size: 0.8em;
   }
 }
-#cart-icon {
+.cart-icon {
   color: $white;
-  font-size: 1.7rem;
+  font-size: 1.5rem;
   cursor: pointer;
+  position: relative;
+  display: flex;
+  align-items: center;
+  &:active {
+    position: relative;
+    top: 1px;
+  }
 }
 #counter {
-  font-size: 0.7em;
-  font-weight: 500;
+  font-size: 0.6em;
+  font-weight: 700;
   font-family: $ubuntu-font;
   margin: 0;
-  padding: 5px;
+  position: absolute;
+  top: -8px;
+  left: 1.75rem;
 }
-.bx-menu {
+.hamburger-react {
   color: $white;
   font-size: 1.7em;
   cursor: pointer;
@@ -48,11 +61,10 @@ header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 20px 0;
+  padding: 1.3rem 0.8rem;
 }
 
 .navbar {
-  // border: 1px solid red;
   width: 60%;
   height: 10vh;
   display: flex;
@@ -65,13 +77,70 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: relative;
   }
   &__link {
     position: relative;
     font-size: 1.1em;
-    color: $white;
+    color: #d8d1d1;
     display: block;
     margin: 0 1.2rem;
-    padding: 0 15px;
+    padding: 0 13px;
+    &:hover {
+      color: #fff;
+    }
+    &:after {
+      content: "";
+      position: absolute;
+      background-color: #B0B7CB;
+      height: 3px;
+      width: 0;
+      left: 0;
+      bottom: -10px;
+      transition: width 0.3s ease;
+    }
+    &:hover:after {
+      width: 100%;
+    }
+    &:active {
+      position: relative;
+      top: 1px;
+    }
+  }
+}
+.FaUser {
+  color: #fff;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.icon-nav {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: $white;
+}
+.rgb {
+  height: 3px;
+  width: 100%;
+  background: #ff0059;
+  background: linear-gradient(45deg,rgba(255,0,0,1) 0%,rgba(255,0,255,1) 18%,rgba(0,0,255,1) 30%,rgba(0,240,255,1) 45%,rgba(0,255,0,1) 63%,rgba(255,255,0,1) 80%,rgba(255,120,0,1) 90%,rgba(255,0,0,1) 100%);
+  background-size: 400% 400%;
+  animation: rgbBg 20s linear infinite;
+  position: relative;
+}
+
+@keyframes rgbBg {
+  0% {
+    background-position: 400% 0%;
+  }
+  100% {
+    background-position: 0% 400%;
+  }
+}
+
+.nav-small {
+  @include breakpoints-down(nav-small) {
+    display: none;
   }
 }
