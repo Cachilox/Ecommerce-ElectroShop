@@ -2,6 +2,8 @@ import { initializeApp } from "firebase/app";
 import { getFirestore, collection, addDoc, getDocs, getDoc, doc, updateDoc, deleteDoc } from "firebase/firestore";
 import {getAuth} from "firebase/auth"
 
+
+
 const firebaseConfig = {
   apiKey: process.env.REACT_APP_APIKEY,
   authDomain: process.env.REACT_APP_AUTHDOMAIN,
@@ -116,18 +118,23 @@ const deleteProduct = async(id) => {
 
 // CREATE AND READ BUY ORDER
 
-const createPurchaseOrder = async (client, date, preTotal, items) => {
-  const buyOrder = await addDoc(collection(database, "orders"), {
-    name: client.name,
-    email: client.email,
-    dni: client.dni,
-    address: client.address,
-    date: date,
-    totalPrice: preTotal,
-    items: items,
-  })
-  return buyOrder
-}
+
+// const createPurchaseOrder = async (client, date, preTotal, items) => {
+//   try {
+//     const buyOrder = await addDoc(collection(database, "orders"), {
+//       name: client.name,
+//       email: client.email,
+//       dni: client.dni,
+//       address: client.address,
+//       date: date,
+//       totalPrice: preTotal,
+//       items: items,
+//     })
+//     return buyOrder
+//   } catch (error) {
+//     console.error(error);
+//   }
+// }
 
 const getOrderBuy = async(id) => {
   const item = await getDoc(doc(database, "buyOrder", id))
@@ -135,4 +142,4 @@ const getOrderBuy = async(id) => {
   return buyOrder
 }
 
-export { cargarBDD, getProducts, getProduct, createProduct, updateProduct, deleteProduct, createPurchaseOrder, getOrderBuy, database, auth };
+export { cargarBDD, getProducts, getProduct, createProduct, updateProduct, deleteProduct, getOrderBuy, database, auth };

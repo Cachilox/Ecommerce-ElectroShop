@@ -3,7 +3,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 // Context
-import { CartContextProvider } from "../context/ContextCart";
+import { CartContextProvider } from "../context/cartContext";
 import { AuthProvider } from "../context/authContext";
 // Components
 import Navbar from "./Navbar/Navbar";

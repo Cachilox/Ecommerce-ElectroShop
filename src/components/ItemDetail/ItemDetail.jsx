@@ -1,5 +1,4 @@
-import { useContext } from "react";
-import { CartContext } from "../../context/ContextCart";
+import { useCart } from "../../context/cartContext";
 import ItemCount from "../ItemCount/ItemCount";
 import { FaRegCreditCard, FaTruck } from "react-icons/fa";
 import { useState } from "react";
@@ -10,7 +9,7 @@ import "swiper/css/pagination";
 import { Navigation, Pagination } from "swiper";
 
 function ItemDetail({ producto }) {
-  const { addItem } = useContext(CartContext);
+  const { addItem } = useCart();
   const [quantity, setQuantity] = useState(0);
 
   const {

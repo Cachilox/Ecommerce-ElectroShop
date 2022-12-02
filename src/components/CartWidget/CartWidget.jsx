@@ -1,10 +1,9 @@
 import { Link } from "react-router-dom";
-import { useContext } from "react";
-import { CartContext } from "../../context/ContextCart";
+import { useCart } from "../../context/cartContext";
 import {TiShoppingCart} from "react-icons/ti"
 
 const CartWidget = () => {
-  const {getItemQuantity} = useContext(CartContext)
+  const {getItemQuantity} = useCart()
   return (
     <>
       <Link to="/cart">

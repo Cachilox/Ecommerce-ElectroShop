@@ -1,20 +1,21 @@
-import { useState, useRef, useContext } from "react";
+import { useState, useRef } from "react";
 import { toast } from "react-toastify";
-import { CartContext } from "../../context/ContextCart";
+import { useCart } from "../../context/cartContext";
 import {
   getProduct,
-  updateProduct,
-  createPurchaseOrder,
+  updateProduct
 } from "../../firebase/firebase";
+import { useAuth } from "../../context/authContext";
 
 const useForm = (initalData, onValidate) => {
   const [form, setForm] = useState(initalData);
   const [loading, setLoading] = useState(false);
   const [errors, setErros] = useState({});
-  const { cart, totalPrice, emptyCart } = useContext(CartContext);
+  const { cart, totalPrice, emptyCart } = useCart();
   const [orderId, setOrderId] = useState();
   const [orderCreated, setOrderCreated] = useState(false);
   const [date, setDate] = useState("")
+  const {createPurchaseOrder} = useAuth()
 
   const datosFormularios = useRef();
 
@@ -48,6 +49,7 @@ const useForm = (initalData, onValidate) => {
       });
       createPurchaseOrder(formValues, dateNow, totalPrice(), cartItem)
         .then((order) => {
+          console.log(order);
           toast.success(`Su orden ${order.id} se creo con éxito!`, {
             position: "bottom-left",
             autoClose: 3500,

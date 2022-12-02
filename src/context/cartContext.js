@@ -1,7 +1,12 @@
-import { createContext, useState, useEffect } from "react";
+import { createContext, useContext, useState, useEffect } from "react";
 import { toast } from "react-toastify";
 
 const CartContext = createContext("");
+
+export const useCart = () => {
+  const context = useContext(CartContext)
+  return context
+}
 
 const CartContextProvider = (props) => {
 

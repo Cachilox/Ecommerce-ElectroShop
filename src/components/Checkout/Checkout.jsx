@@ -3,12 +3,13 @@ import useForm from "./useForm";
 import { Link } from "react-router-dom";
 import { useAuth } from "../../context/authContext";
 const Checkout = () => {
+
   const {user} = useAuth()
 
   const initalData = {
     name: "",
-    email: `${user ? user.email : ""}`,
-    confirmEmail: `${user ? user.email : ""}`,
+    email: `${user?.email ?? ""}`,
+    confirmEmail: `${user?.email ?? ""}`,
     address: "",
     city: "",
     state: "",
@@ -20,6 +21,7 @@ const Checkout = () => {
     expYear: "",
     cvv: "",
   };
+
 
   const onValidate = (form) => {
     let errors = {};
@@ -99,6 +101,8 @@ const Checkout = () => {
     orderId,
     date
   } = useForm(initalData, onValidate);
+  console.log(form.email);
+  console.log(form.confirmEmail);
 
   if (orderCreated) {
     return (
@@ -149,13 +153,13 @@ const Checkout = () => {
               />
               {errors.name && <div className="errorMessage">{errors.name}</div>}
             </div>
+
             <div className="inputBox">
               <span className="inputBox__span">Email :</span>
               <input
                 type="email"
                 onChange={handleChange}
                 value={user?.email ?? form.email}
-                readOnly
                 name="email"
                 placeholder="example@example.com"
                 disabled={user ? true : false}
@@ -164,13 +168,13 @@ const Checkout = () => {
                 <div className="errorMessage">{errors.email}</div>
               )}
             </div>
+
             <div className="inputBox">
               <span className="inputBox__span">ConfirmEmail :</span>
               <input
                 type="email"
                 onChange={handleChange}
                 value={user?.email ?? form.confirmEmail}
-                readOnly
                 name="confirmEmail"
                 placeholder="example@example.com"
                 disabled={user ? true : false}
@@ -330,8 +334,8 @@ const Checkout = () => {
           </div>
         </div>
 
-        <button type="submit" className="submit-btn" disabled={loading}>
-          Ckeckout
+        <button type="submit" className="submit-btn">
+          {loading ? "Loading..." : "Ckeckout"}
         </button>
       </form>
     </div>

@@ -1,14 +1,13 @@
 import React from "react";
 import CartWidget from "../CartWidget/CartWidget";
 import Secciones from "./Secciones/Secciones";
-import {useAuth} from "../../context/authContext"
-import {FaUser} from "react-icons/fa"
+import { useAuth } from "../../context/authContext";
+import { FaUser } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
 const Navbar = React.memo(() => {
+  const { user } = useAuth();
 
-  const {user} = useAuth()
-  console.log(user);
   return (
     <header>
       <div className="nav-top">
@@ -19,11 +18,12 @@ const Navbar = React.memo(() => {
 
         <div className="icon-nav">
           <Link to={user ? "/profile" : "/login"}>
-            <FaUser className="FaUser"/>
+            <FaUser className="FaUser" />
           </Link>
-          <small className="nav-small">{user ? `Hola ${user.displayName}` : "Account"}</small>
+          <small className="nav-small">
+            {user ? user.displayName : "Account"}
+          </small>
         </div>
-
         <div className="icon-nav">
           <CartWidget />
           <small className="nav-small">Mi carrito</small>

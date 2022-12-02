@@ -1,12 +1,11 @@
-import { useContext } from "react";
 import { Link } from "react-router-dom";
-import { CartContext } from "../../context/ContextCart";
+import { useCart } from "../../context/cartContext";
 import { TiTrash, TiTimes } from "react-icons/ti";
 import CartEmpty from "./CartEmpty";
 
 const Cart = () => {
 
-  const { cart, emptyCart, removeItem, totalPrice } = useContext(CartContext);
+  const { cart, emptyCart, removeItem, totalPrice } = useCart();
   return (
     <div className="cartPage">
       {cart.length === 0 ? (

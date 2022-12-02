@@ -56,11 +56,11 @@ function Login() {
       <form className="form-login" onSubmit={handleSubmit}>
         <h2 className="form-login__title">Iniciá sesión</h2>
         <p className="form-login__paragraph">
-          ¿Aun no tienes una cuenta?{" "}
-          <Link className="form-login__link" to="/register">
-            Entra aquí
-          </Link>
+          ¿Aun no tienes una cuenta?
         </p>
+        <Link className="form-login__link" to="/register">
+          Entra aquí
+        </Link>
 
         <div className="form-login__container">
           <div className="form-group">

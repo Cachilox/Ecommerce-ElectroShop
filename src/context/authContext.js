@@ -5,9 +5,10 @@ import {
   onAuthStateChanged,
   signOut,
   GoogleAuthProvider,
-  signInWithPopup,
+  signInWithPopup
 } from "firebase/auth";
-import { auth } from "../firebase/firebase";
+import { auth, database } from "../firebase/firebase";
+import {collection, addDoc} from "firebase/firestore";
 
 export const authContext = createContext();
 
@@ -29,6 +30,24 @@ export function AuthProvider(props) {
 
   const logout = () => signOut(auth);
 
+  const createPurchaseOrder = async (client, date, preTotal, items) => {
+    try {
+      const buyOrder = await addDoc(collection(database, "orders"), {
+        name: client.name,
+        email: `${user ? user.email : client.email}`,
+        dni: client.dni,
+        address: client.address,
+        date: date,
+        totalPrice: preTotal,
+        items: items,
+      })
+      return buyOrder
+    } catch (error) {
+      console.error(error);
+    }
+  }
+
+
   const loginWithGoogle = () => {
     const googleProvider = new GoogleAuthProvider();
     return signInWithPopup(auth, googleProvider);
@@ -45,7 +64,7 @@ export function AuthProvider(props) {
 
   return (
     <authContext.Provider
-      value={{ signup, login, user, logout, loading, loginWithGoogle }}
+      value={{ signup, login, user, logout, loading, loginWithGoogle, createPurchaseOrder }}
     >
       {props.children}
     </authContext.Provider>
