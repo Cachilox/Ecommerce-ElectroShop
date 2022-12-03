@@ -11,8 +11,7 @@ const Item = ({ prod }) => {
           ${new Intl.NumberFormat("de-DE").format(price)}
         </p>
         <div className="card__active-btn">
-
-          <Link className="btn-blue"  to={`/product/${id}`}>
+          <Link className="btn-blue" to={`/product/${id}`}>
             Ver producto
           </Link>
         </div>

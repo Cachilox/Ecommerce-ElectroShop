@@ -49,7 +49,6 @@ const useForm = (initalData, onValidate) => {
       });
       createPurchaseOrder(formValues, dateNow, totalPrice(), cartItem)
         .then((order) => {
-          console.log(order);
           toast.success(`Su orden ${order.id} se creo con éxito!`, {
             position: "bottom-left",
             autoClose: 3500,

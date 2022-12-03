@@ -15,6 +15,12 @@
     &__paragraph {
         font-weight: 400;
         margin-bottom: 0.3rem;
+        display: flex;
+        justify-content: center;
+        gap: 0.5rem;
+        @include breakpoints-down(small) {
+            flex-direction: column;
+        }
     }
     &__link {
         color: #111;
@@ -39,7 +45,7 @@
     &__container {
         margin-top: 3em;
         display: grid;
-        gap: 2.1em;
+        gap: 2.3em;
 
         .form-group {
             position: relative;
@@ -72,7 +78,7 @@
                 position: absolute;
                 top: 0;
                 left: 5px;
-                transform: translateY(10px);
+                transform: translateY(3px);
                 transition: transform 0.5s, color .3s;
             }
             .form-line {

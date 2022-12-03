@@ -1,0 +1,52 @@
+.profile {
+  display: flex;
+  justify-content: center;
+  margin-top: 3.5rem;
+  flex-direction: column;
+  align-items: stretch;
+  border: 0.13rem solid $btn-prod;
+  box-shadow: 0.3rem 0.3rem 0 #343594e8;
+  // margin: 2rem 0;
+  max-width: 36rem;
+  min-height: 12rem;
+
+  &__title {
+    margin-bottom: 1.5rem;
+    color: $black;
+  }
+  &__span {
+    display: inline-flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    font-size: 1.1em;
+    width: 100%;
+    margin-bottom: 0.8rem;
+  }
+  &__btn {
+    align-self: flex-end;
+    margin-top: 1.5rem;
+    box-shadow: 3px 4px 0px 0px #1564ad;
+    background: linear-gradient(to bottom, #79bbff 5%, #378de5 100%);
+    background-color: #79bbff;
+    border-radius: 5px;
+    border: 1px solid #337bc4;
+    display: inline-block;
+    cursor: pointer;
+    color: #ffffff;
+    font-family: Arial;
+    font-size: 17px;
+    font-weight: bold;
+    padding: 9px 30px;
+    text-decoration: none;
+    text-shadow: 0px 1px 0px #528ecc;
+
+    &:hover {
+      background: linear-gradient(to bottom, #378de5 5%, #79bbff 100%);
+      background-color: #378de5;
+    }
+    &:active {
+      position: relative;
+      top: 1px;
+    }
+  }
+}

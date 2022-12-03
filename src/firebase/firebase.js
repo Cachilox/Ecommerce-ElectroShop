@@ -136,8 +136,8 @@ const deleteProduct = async(id) => {
 //   }
 // }
 
-const getOrderBuy = async(id) => {
-  const item = await getDoc(doc(database, "buyOrder", id))
+const getOrderBuy = async (id) => {
+  const item = await getDoc(doc(database, "orders", id))
   const buyOrder = {...item.data(), id: item.id}
   return buyOrder
 }

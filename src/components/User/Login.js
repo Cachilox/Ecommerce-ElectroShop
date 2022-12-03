@@ -39,6 +39,9 @@ function Login() {
       if (error.code === "auth/wrong-password") {
         setError("Contraseña incorrecta");
       }
+      if (error.code === "auth/user-not-found") {
+        setError("Usuario no encontrado");
+      }
     }
   };
 
@@ -57,11 +60,13 @@ function Login() {
         <h2 className="form-login__title">Iniciá sesión</h2>
         <p className="form-login__paragraph">
           ¿Aun no tienes una cuenta?
+          <span>
+            <Link className="form-login__link" to="/register">
+              Entra aquí
+            </Link>
+          </span>
         </p>
-        <Link className="form-login__link" to="/register">
-          Entra aquí
-        </Link>
-
+        
         <div className="form-login__container">
           <div className="form-group">
             <input

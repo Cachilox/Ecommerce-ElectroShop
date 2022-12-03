@@ -1,13 +1,13 @@
 import React from "react";
 import useForm from "./useForm";
-import { Link } from "react-router-dom";
+import OrderCreate from "./OrderCreate";
 import { useAuth } from "../../context/authContext";
-const Checkout = () => {
 
+const Checkout = () => {
   const {user} = useAuth()
 
   const initalData = {
-    name: "",
+    name: `${user?.displayName ?? ""}`,
     email: `${user?.email ?? ""}`,
     confirmEmail: `${user?.email ?? ""}`,
     address: "",
@@ -49,43 +49,43 @@ const Checkout = () => {
     if (!form.address.trim()) {
       errors.address = 'El campo "Address" no debe ser vacio.';
     }
-    if (!form.city.trim()) {
-      errors.city = 'El campo "City" no debe ser vacio.';
-    }
+    // if (!form.city.trim()) {
+    //   errors.city = 'El campo "City" no debe ser vacio.';
+    // }
 
-    if (!form.nameOnCard.trim()) {
-      errors.nameOnCard = 'El campo "Name on card" no debe ser vacio.';
-    }
+    // if (!form.nameOnCard.trim()) {
+    //   errors.nameOnCard = 'El campo "Name on card" no debe ser vacio.';
+    // }
 
-    if (!form.cardNumber.trim()) {
-      errors.cardNumber = 'El campo "Credit card number" no debe ser vacio.';
-    }
+    // if (!form.cardNumber.trim()) {
+    //   errors.cardNumber = 'El campo "Credit card number" no debe ser vacio.';
+    // }
 
-    if (!form.dni.trim()) {
-      errors.dni = 'El campo "DNI" no debe ser vacio.';
-    }
+    // if (!form.dni.trim()) {
+    //   errors.dni = 'El campo "DNI" no debe ser vacio.';
+    // }
 
-    if (!form.expMonth.trim()) {
-      errors.expMonth = 'El campo "Exp Month" no debe ser vacio.';
-    }
+    // if (!form.expMonth.trim()) {
+    //   errors.expMonth = 'El campo "Exp Month" no debe ser vacio.';
+    // }
 
-    if (!form.state.trim()) {
-      errors.state = 'El campo "State" no debe ser vacio.';
-    }
+    // if (!form.state.trim()) {
+    //   errors.state = 'El campo "State" no debe ser vacio.';
+    // }
 
-    if (!form.zipCode.trim()) {
-      errors.zipCode = 'El campo "Zip code" no debe ser vacio.';
-    }
+    // if (!form.zipCode.trim()) {
+    //   errors.zipCode = 'El campo "Zip code" no debe ser vacio.';
+    // }
 
-    if (!form.expYear.trim()) {
-      errors.expYear = 'El campo "Exp year" no debe ser vacio.';
-    } else if (form.expYear < 2022) {
-      errors.expYear = "Fecha expirada, ingrese un año valido.";
-    }
+    // if (!form.expYear.trim()) {
+    //   errors.expYear = 'El campo "Exp year" no debe ser vacio.';
+    // } else if (form.expYear < 2022) {
+    //   errors.expYear = "Fecha expirada, ingrese un año valido.";
+    // }
 
-    if (!form.cvv.trim()) {
-      errors.cvv = 'El campo "CVV" no debe ser vacio.';
-    }
+    // if (!form.cvv.trim()) {
+    //   errors.cvv = 'El campo "CVV" no debe ser vacio.';
+    // }
 
     return errors;
   };
@@ -101,31 +101,12 @@ const Checkout = () => {
     orderId,
     date
   } = useForm(initalData, onValidate);
-  console.log(form.email);
-  console.log(form.confirmEmail);
 
   if (orderCreated) {
     return (
-      <div className="container purchase">
-        <div>
-          <h2 className="purchase__title">Thanks for your purchase</h2>
-          <p className="purchase__desc">
-            Your purchase ID is: <strong>{orderId}</strong>
-          </p>
-          <p className="purchase__desc">Date of purchase: {date}</p>
-          <div className="bottom">
-            <Link to="/" className="purchase__btn">
-              Return home
-            </Link>
-          </div>
-        </div>
-
-        <div>
-          <img
-            className="purchase__img"
-            src="https://firebasestorage.googleapis.com/v0/b/proyecto-react-coderhous-192d5.appspot.com/o/shopping-cart.webp?alt=media&token=7ad7b321-c8c6-4dc1-8e5f-7453990e8826"
-            alt="shopping-cart"
-          />
+      <div className="container">
+        <div className="purchase">
+          <OrderCreate date={date} orderId={orderId}/>
         </div>
       </div>
     );
@@ -148,8 +129,9 @@ const Checkout = () => {
                 type="text"
                 onChange={handleChange}
                 name="name"
-                value={form.name}
+                value={form.user?.displayName ?? form.name}
                 placeholder="name"
+                disabled={user ? true : false}
               />
               {errors.name && <div className="errorMessage">{errors.name}</div>}
             </div>
@@ -335,7 +317,7 @@ const Checkout = () => {
         </div>
 
         <button type="submit" className="submit-btn">
-          {loading ? "Loading..." : "Ckeckout"}
+          {loading ? "Create order..." : "Ckeckout"}
         </button>
       </form>
     </div>

@@ -63,17 +63,22 @@ const CartContextProvider = (props) => {
   const totalPrice = () => {
     return cart.reduce((acc, prod) => (acc += prod.cant * prod.price), 0);
   };
+  const totalPriceLS = () => {
+    return carritoLS.reduce((acc, prod) => (acc += prod.cant * prod.price), 0);
+  };
 
   return (
     <CartContext.Provider
       value={{
         cart,
+        carritoLS,
         isInCart,
         addItem,
         emptyCart,
         removeItem,
         getItemQuantity,
         totalPrice,
+        totalPriceLS
       }}
     >
       {props.children}

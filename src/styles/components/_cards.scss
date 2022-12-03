@@ -12,20 +12,19 @@
   &__img {
     width: 13.4rem;
     height: 11.3rem;
+    transition: transform 300ms ease;
+    &:hover {
+      transform: scale(1.05);
+    }
   }
 
-  &__marca {
-    font-size: 0.9rem;
-    color: gray;
-    margin-bottom: 0.5rem;
-  }
   &__title {
     font-size: 1em;
     margin: 0.5rem 0 0.5rem 0;
     text-transform: capitalize;
   }
   &__price {
-    color: green;
+    color: #008000;
     margin-bottom: 0.6rem;
     font-size: 1.2em;
   }

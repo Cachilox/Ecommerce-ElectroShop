@@ -11,7 +11,7 @@
   transition: left 0.5s ease-in-out;
   z-index: 2;
   @include breakpoints-down(modalNav) {
-    top: 8.3rem;
+    top: 8rem;
   }
 
   &__items {

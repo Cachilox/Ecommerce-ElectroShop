@@ -5,9 +5,9 @@ import { useAuth } from "../../context/authContext";
 import { FaUser } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
+
 const Navbar = React.memo(() => {
   const { user } = useAuth();
-
   return (
     <header>
       <div className="nav-top">
@@ -21,7 +21,7 @@ const Navbar = React.memo(() => {
             <FaUser className="FaUser" />
           </Link>
           <small className="nav-small">
-            {user ? user.displayName : "Account"}
+            {user?.displayName || "Cuenta"}
           </small>
         </div>
         <div className="icon-nav">

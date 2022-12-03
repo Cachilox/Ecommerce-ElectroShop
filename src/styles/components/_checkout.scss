@@ -99,39 +99,55 @@
 
 .purchase {
   margin-top: 1.2rem;
-  @include breakpoints-up(breakProd) {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  .bottom {
-    text-align: center;
-  }
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+  padding: 1.3rem;
+  border: 0.13rem solid $btn-prod;
+  box-shadow: 0.3rem 0.3rem 0 #B0B7CB;
+
   &__title {
-    text-align: center;
-    color: #111;
-    font-size: 1.6em;
-    font-weight: 600;
-    @include breakpoints-up(breakProd) {
-      font-size: 3em;
-      font-weight: 700;
-    }
-  }
-  &__desc {
-    color: #808080;
-    margin-top: 1rem;
-    font-size: 1.1em;
-    text-align: center;
-    font-weight: 600;
-    @include breakpoints-up(breakProd) {
-      font-size: 1.4em;
-      font-weight: 700;
-    }
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    font-size: 1.4em;
+    gap: 1rem;
 
     strong {
-      color: #008000;
+      color: green;
+      font-size: 0.8em;
     }
+  }
+
+  &__date {
+    color: #302c2c;
+    font-size: 1em;
+    margin-top: 0.85rem;
+    font-weight: 500;
+  }
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    flex: auto;
+    width: 100%;
+  }
+
+  &__total {
+    margin-top: 1.8rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    align-items: center;
+    width: 100%;
+    font-size: 1.2em;
+  }
+
+  .bottom {
+    text-align: right;
   }
 
   &__img {
@@ -144,23 +160,23 @@
   &__btn {
     margin: 1.4rem 0;
     box-shadow: 3px 4px 0px 0px #899599;
-    background:linear-gradient(to bottom, #ededed 5%, #bab1ba 100%);
-    background-color:#ededed;
-    border-radius:15px;
-    border:1px solid #d6bcd6;
+    background: linear-gradient(to bottom, #ededed 5%, #bab1ba 100%);
+    background-color: #ededed;
+    border-radius: 15px;
+    border: 1px solid #d6bcd6;
     display: inline-block;
     cursor: pointer;
-    color:#3a8a9e;
-    font-family:Arial;
-    font-size:1.1em;
-    font-weight: 500;
-    padding:7px 25px;
-    text-decoration:none;
-    text-shadow:0px 1px 0px #e1e2ed;
+    color: #3a8a9e;
+    font-family: Arial;
+    font-size: 1.1em;
+    font-weight: 700;
+    padding: 7px 25px;
+    text-decoration: none;
+    text-shadow: 0px 1px 0px #e1e2ed;
 
     &:hover {
-      background:linear-gradient(to bottom, #bab1ba 5%, #ededed 100%);
-      background-color:#bab1ba;
+      background: linear-gradient(to bottom, #bab1ba 5%, #ededed 100%);
+      background-color: #bab1ba;
     }
     &:active {
       position: relative;
@@ -169,4 +185,46 @@
   }
 }
 
+.listItem {
+  margin-top: 2em;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  gap: 0.5rem;
+  border-bottom: 0.15rem solid rgba(56, 101, 224, 0.616);
+  &__img {
+    height: 4rem;
+    width: 5rem;
+    max-width: 20%;
+    object-fit: contain;
+  }
 
+  &__details {
+    display: flex;
+    align-items: center;
+    flex: 1;
+    max-width: 80%;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: space-between;
+
+    h4 {
+      width: 38%;
+      @include breakpoints-down(nav-small) {
+        width: 100%;
+      }
+    }
+
+    span {
+      width: 15%;
+      text-align: center;
+    }
+    span:nth-child(3) {
+      margin-left: 18px;
+    }
+
+    b {
+      margin-left: 0 auto;
+    }
+  }
+}

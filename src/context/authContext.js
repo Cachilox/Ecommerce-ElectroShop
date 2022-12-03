@@ -33,7 +33,7 @@ export function AuthProvider(props) {
   const createPurchaseOrder = async (client, date, preTotal, items) => {
     try {
       const buyOrder = await addDoc(collection(database, "orders"), {
-        name: client.name,
+        name: `${user ? user.displayName : client.name}`,
         email: `${user ? user.email : client.email}`,
         dni: client.dni,
         address: client.address,

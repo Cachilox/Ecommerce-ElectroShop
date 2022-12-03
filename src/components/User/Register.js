@@ -3,13 +3,13 @@ import { useAuth } from "../../context/authContext";
 import { Link, useNavigate } from "react-router-dom";
 import { Alert } from "./Alert";
 import { toast } from "react-toastify";
-import {updateProfile} from "firebase/auth"
+import { updateProfile } from "firebase/auth";
 
 function Register() {
   const [values, setValues] = useState({
     name: "",
     email: "",
-    password: ""
+    password: "",
   });
 
   const [error, setError] = useState();
@@ -24,26 +24,49 @@ function Register() {
     e.preventDefault();
     setError("");
     try {
-      await signup(values.email, values.password).then(async(res) => {
+      let regexName = /^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$/;
+      if(!values.name) {
+        return setError("El campo Full name no puede estar vacio.")
+      }else if (!regexName.test(values.name)) {
+        return setError("El campo Full name solo acepta letras.");
+      }
+      if (!values.email) {
+        return setError("El campo Email no puede estar vacio.")
+      }
+      if (!values.password) {
+        return setError("El campo Password no puede estar vacio.")
+      }
+
+      await signup(values.email, values.password).then(async (res) => {
         const user = res.user;
         await updateProfile(user, {
           displayName: values.name,
         });
         navigate("/login");
-        toast.success("Cuenta creada con exito");
-
-      }).catch(err => console.log(err))
-      
+        toast.success("Cuenta creada con exito!", {
+          position: "bottom-left",
+          autoClose: 4000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "dark",
+        });
+      });
     } catch (error) {
-      console.log(error);
+      
       if (error.code === "auth/weak-password") {
         setError("La contraseña debe tener almenos 6 caracteres");
       }
-      if (error.code === "auth/internal/error") {
+      if (error.code === "auth/invalid-email") {
         setError("Correo invalido");
       }
       if (error.code === "auth/email-already-in-use") {
         setError("El correo ya esta en uso");
+      }
+      if (error.code === "auth/wrong-password") {
+        setError("Contraseña incorrecta");
       }
     }
   };
@@ -52,10 +75,14 @@ function Register() {
     <div className="container">
       <form className="form-login" onSubmit={handleSubmit}>
         <h2 className="form-login__title">Registrarse</h2>
-        <p className="form-login__paragraph">¿Ya tienes una cuenta?</p>
-        <Link className="form-login__link" to="/login">
-          Entra aquí
-        </Link>
+        <p className="form-login__paragraph">
+          ¿Ya tienes una cuenta?
+          <span>
+            <Link className="form-login__link" to="/login">
+              Entra aquí
+            </Link>
+          </span>
+        </p>
 
         <div className="form-login__container">
           <div className="form-group">
@@ -67,7 +94,7 @@ function Register() {
               className="inputGroup"
             />
             <label className="label" htmlFor="name">
-              Name
+              Full name
             </label>
             <span className="form-line"></span>
           </div>
