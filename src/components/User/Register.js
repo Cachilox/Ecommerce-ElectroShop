@@ -10,6 +10,7 @@ function Register() {
     name: "",
     email: "",
     password: "",
+    confirmPassword: "",
   });
 
   const [error, setError] = useState();
@@ -35,6 +36,12 @@ function Register() {
       }
       if (!values.password) {
         return setError("El campo Password no puede estar vacio.")
+      }
+      if (!values.confirmPassword) {
+        return setError("El campo Confirm Password no puede estar vacio.")
+      }
+      if(values.confirmPassword !== values.password) {
+        return setError("Ambas Contraseñas deben ser iguales.")
       }
 
       await signup(values.email, values.password).then(async (res) => {
@@ -123,6 +130,20 @@ function Register() {
             />
             <label className="label" htmlFor="password">
               Password
+            </label>
+            <span className="form-line"></span>
+          </div>
+
+          <div className="form-group">
+            <input
+              type="password"
+              onChange={handleChange}
+              name="confirmPassword"
+              placeholder=" "
+              className="inputGroup"
+            />
+            <label className="label" htmlFor="password">
+              Confirm Password
             </label>
             <span className="form-line"></span>
           </div>

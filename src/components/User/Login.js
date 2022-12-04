@@ -23,10 +23,17 @@ function Login() {
     e.preventDefault();
     setError("");
     try {
+      if (!user.email) {
+        setError("El campo Email no puede estar vacio.")
+      }
+      if (!user.password) {
+        setError("El campo Password no puede estar vacio.")
+      }
+
       await login(user.email, user.password);
       navigate("/profile");
     } catch (error) {
-      console.log(error);
+      // console.log(error);
       if (error.code === "auth/weak-password") {
         setError("La contraseña debe tener almenos 6 caracteres");
       }

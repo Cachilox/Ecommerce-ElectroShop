@@ -1,70 +1,57 @@
-# Getting Started with Create React App
+# Ecommerce-ElectroShop 🛒
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+_E-commerce simulator built with React.js and Firestore, for the CoderHouse course, commission 37090._
 
-## Available Scripts
+## Deployment
 
-In the project directory, you can run:
+deploy: [electroshop.vercel.app](electroshop.vercel.app)
 
-### `npm start`
+### Description
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+_Users can login/register if they wish using an email and password. From the index, they can browse the entire product catalog. From the article detail, they can add products to the cart and then go to the payment view and send the order with their data. Finally, if the user is registered, there is a profile view to verify the user's data, and when the purchase is completed correctly, the user is redirected to his purchase order and view the purchased products._
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Dependencies 📋
 
-### `npm test`
+_extra packages included_
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```
+react-router-dom
+react-icons
+react-spinners
+react-toastify
+sass
+swiper
+```
 
-### `npm run build`
+### Used technology 🛠️
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+* [React] (https://reactjs.org/) - javascript framework
+* [Firebase] (https://firebase.google.com/) - Server and Database in the cloud
+* [Scss] (https://sass-lang.com/) - Css preprocessor
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Raise the project locally
 
-### `npm run eject`
+```
+git clone https://github.com/Cachilox/Ecommerce-ElectroShop.git
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- run 'npm i' to install dependencies
+- run 'npm start'
+- Go to http://localhost:3000/
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Screenshots 📌
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+![header](https://firebasestorage.googleapis.com/v0/b/proyecto-react-coderhous-192d5.appspot.com/o/1.png?alt=media&token=e49a5e4d-a5dd-47e2-878c-8d2273d3d652)
+![main](https://firebasestorage.googleapis.com/v0/b/proyecto-react-coderhous-192d5.appspot.com/o/2.png?alt=media&token=ff405630-2aaf-4456-9e1e-ccb585fe62c8)
+![footer](https://firebasestorage.googleapis.com/v0/b/proyecto-react-coderhous-192d5.appspot.com/o/3.png?alt=media&token=b91b9686-a0a8-4bf9-93c0-75f880f2db9a)
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+![register](https://firebasestorage.googleapis.com/v0/b/proyecto-react-coderhous-192d5.appspot.com/o/4.png?alt=media&token=7423ce5b-3e99-4242-a7dd-bcf681b5348b)
 
-## Learn More
+![item detail](https://firebasestorage.googleapis.com/v0/b/proyecto-react-coderhous-192d5.appspot.com/o/5.png?alt=media&token=386d275a-fae3-4593-9cac-240d96287a4f)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+![cart](https://firebasestorage.googleapis.com/v0/b/proyecto-react-coderhous-192d5.appspot.com/o/6.png?alt=media&token=398f367a-006c-4462-aafa-d0533de0dcb6)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+![checkout](https://firebasestorage.googleapis.com/v0/b/proyecto-react-coderhous-192d5.appspot.com/o/7.png?alt=media&token=89e71f65-b679-4f60-b11f-ea562f7f8b29)
 
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+![order id](https://firebasestorage.googleapis.com/v0/b/proyecto-react-coderhous-192d5.appspot.com/o/8.png?alt=media&token=80891f60-f9d1-4c47-a2e9-ff679d9b60a9)

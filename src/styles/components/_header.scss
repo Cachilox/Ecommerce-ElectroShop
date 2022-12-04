@@ -42,13 +42,17 @@ header {
   }
 }
 #counter {
-  font-size: 0.6em;
-  font-weight: 700;
+  font-size: 12px;
+  font-weight: bold;
   font-family: $ubuntu-font;
+  padding: 2px 5px;
   margin: 0;
   position: absolute;
   top: -8px;
-  left: 1.75rem;
+  left: 1.48rem;
+  background: $btn-prod;
+  line-height: 13px;
+  border-radius: 20px;
 }
 .hamburger-react {
   color: $white;
