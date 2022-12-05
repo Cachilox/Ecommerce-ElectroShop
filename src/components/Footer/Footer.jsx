@@ -1,10 +1,5 @@
 import { Link } from "react-router-dom";
-import {
-  TiSocialFacebook,
-  TiSocialInstagram,
-  TiSocialTwitter,
-} from "react-icons/ti";
-import { navBarOptions, footerContact, metodosPagos } from "../helpers/strings";
+import { navBarOptions, footerContact, metodosPagos, footerSocialLinks } from "../helpers/strings";
 import Newsletter from "./Newsletter";
 
 const Footer = () => {
@@ -52,27 +47,10 @@ const Footer = () => {
               <h4 className="footer__title">Follow us</h4>
 
               <div className="footer__social-links">
-                <a
-                  href="https://www.facebook.com/"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  <TiSocialFacebook />
-                </a>
-                <a
-                  href="https://www.instagram.com/"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  <TiSocialInstagram />
-                </a>
-                <a
-                  href="https://twitter.com/home"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  <TiSocialTwitter />
-                </a>
+                {footerSocialLinks.map((link) => {
+                  const {id, href, icon} = link
+                  return <a key={id} href={href}>{icon}</a>
+                })}
               </div>
             </div>
           </div>

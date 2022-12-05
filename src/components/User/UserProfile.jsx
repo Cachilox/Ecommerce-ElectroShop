@@ -3,6 +3,7 @@ import { useAuth } from "../../context/authContext";
 function UserProfile() {
   const { user, logout, loading } = useAuth();
   const { displayName, email } = user;
+
   const handleLogout = async () => {
     try {
       await logout();
@@ -12,7 +13,7 @@ function UserProfile() {
   };
 
   if (loading) return <h1>Loading...</h1>;
-  
+
   return (
     <div className="container">
       <div className="profile container">
@@ -23,7 +24,9 @@ function UserProfile() {
         <span className="profile__span">
           Email: <b>{email}</b>
         </span>
-        <button className="profile__btn" onClick={handleLogout}>Cerrar sesíon</button>
+        <button className="profile__btn" onClick={handleLogout}>
+          Cerrar sesíon
+        </button>
       </div>
     </div>
   );

@@ -6,6 +6,7 @@ import {
   signOut,
   GoogleAuthProvider,
   signInWithPopup,
+  sendPasswordResetEmail
 } from "firebase/auth";
 import { auth, database } from "../firebase/firebase";
 import { collection, addDoc } from "firebase/firestore";
@@ -20,7 +21,6 @@ export const useAuth = () => {
 
 export function AuthProvider(props) {
   const [user, setUser] = useState(null);
-  const [loading, setLoading] = useState(true);
 
   const signup = (email, password) =>
     createUserWithEmailAndPassword(auth, email, password);
@@ -29,6 +29,8 @@ export function AuthProvider(props) {
     signInWithEmailAndPassword(auth, email, password);
 
   const logout = () => signOut(auth);
+
+  const resetPassword = (email) => sendPasswordResetEmail(auth, email)
 
   const createPurchaseOrder = async (client, date, preTotal, items) => {
     try {
@@ -55,7 +57,6 @@ export function AuthProvider(props) {
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
       setUser(currentUser);
-      setLoading(false);
     });
 
     return () => unsubscribe();
@@ -68,9 +69,9 @@ export function AuthProvider(props) {
         login,
         user,
         logout,
-        loading,
         loginWithGoogle,
-        createPurchaseOrder
+        createPurchaseOrder,
+        resetPassword
       }}
     >
       {props.children}

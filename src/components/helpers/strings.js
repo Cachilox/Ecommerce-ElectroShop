@@ -7,6 +7,11 @@ import {
 } from "react-icons/fa";
 import { TfiMobile } from "react-icons/tfi";
 import { MdLaptopMac } from "react-icons/md";
+import {
+  TiSocialFacebook,
+  TiSocialInstagram,
+  TiSocialTwitter,
+} from "react-icons/ti";
 
 export const navBarOptions = [
   { icon: <FaHome/>, category: "Home", id: 1, to: "/" },
@@ -31,4 +36,10 @@ export const metodosPagos = [
   {src: "https://www.tiendabna.com.ar/assets/stores/current_store/images/mastercard-gold.png", id:6, alt:"credit card"},
   {src: "https://www.tiendabna.com.ar/assets/stores/current_store/images/visa-signature.png", id:7, alt:"credit card"},
   {src: "https://www.tiendabna.com.ar/assets/stores/current_store/images/mastercard-black.png", id:8, alt:"credit card"},
+]
+
+export const footerSocialLinks = [
+  {href:"https://www.facebook.com/", icon: <TiSocialFacebook/>, id:1 },
+  {href:"https://www.instagram.com/", icon: <TiSocialInstagram/>, id:2},
+  {href:"https://twitter.com/home", icon: <TiSocialTwitter/>, id:3}
 ]

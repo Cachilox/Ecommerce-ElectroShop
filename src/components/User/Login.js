@@ -4,7 +4,6 @@ import { Link, useNavigate } from "react-router-dom";
 import { Alert } from "./Alert";
 import { FcGoogle } from "react-icons/fc";
 
-
 function Login() {
   const [user, setUser] = useState({
     email: "",
@@ -12,7 +11,7 @@ function Login() {
   });
 
   const [error, setError] = useState();
-  const { login, loginWithGoogle } = useAuth();
+  const { login, loginWithGoogle, resetPassword } = useAuth();
   const navigate = useNavigate();
 
   const handleChange = ({ target: { name, value } }) => {
@@ -61,6 +60,17 @@ function Login() {
     }
   };
 
+  const handleResetPassword = async () => {
+    if (!user.email) return setError("Por favor introduzca su correo electrónico.")
+    
+    try {
+      await resetPassword(user.email)
+      setError("Le enviamos un correo electrónico con un enlace para restablecer su contraseña.")
+    } catch (error) {
+      console.error(error)
+    }
+  }
+
   return (
     <div className="container">
       <form className="form-login" onSubmit={handleSubmit}>
@@ -102,6 +112,7 @@ function Login() {
             </label>
             <span className="form-line"></span>
           </div>
+          <span onClick={handleResetPassword} className="form-group__forgotPass" >Forgot password?</span>
 
           <small className="form-login__error">
             {error && <Alert message={error} />}

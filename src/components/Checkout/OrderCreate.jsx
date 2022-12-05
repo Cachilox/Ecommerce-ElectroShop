@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { useCart } from "../../context/cartContext";
 import OrderItem from "./OrderItem";
+
 function OrderCreate({ date, orderId }) {
   const { carritoLS, totalPriceLS } = useCart();
   return (
@@ -13,19 +14,20 @@ function OrderCreate({ date, orderId }) {
 
       <div className="purchase__list">
         {carritoLS?.map((item, index) => {
-            return <OrderItem key={index} item={item}/>
+          return <OrderItem key={index} item={item} />;
         })}
       </div>
       <div className="purchase__total">
-        <span>Total: <b>${totalPriceLS()}</b></span>
+        <span>
+          Total: <b>${totalPriceLS()}</b>
+        </span>
 
         <div className="bottom">
-        <Link to="/" className="purchase__btn">
-          Ir al inicio
-        </Link>
+          <Link to="/" className="purchase__btn">
+            Ir al inicio
+          </Link>
+        </div>
       </div>
-      </div>
-
     </div>
   );
 }
