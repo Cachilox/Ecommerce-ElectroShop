@@ -23,7 +23,7 @@
 
         .title {
           font-size: 1.25em;
-          color: #222;
+          color: $header-top;
           padding-bottom: 5px;
           text-transform: uppercase;
         }
@@ -31,7 +31,7 @@
         .errorMessage {
           font-size: 0.8em;
           padding: 3px;
-          color: red;
+          color: $removeAll-btn;
         }
 
         .flex {
@@ -50,7 +50,7 @@
           img {
             height: 34px;
             margin-top: 5px;
-            filter: drop-shadow(0 0 1px #000);
+            filter: drop-shadow(0 0 1px $header-top);
           }
 
           &__span {
@@ -60,14 +60,14 @@
 
           input {
             width: 100%;
-            border: 1px solid #ccc;
+            border: 1px solid $hover-card;
             padding: 10px 15px;
             font-size: 15px;
             outline: none;
             text-decoration: none;
 
             &:focus {
-              border: 1px solid #000;
+              border: 1px solid $checkout-focus;
             }
           }
         }
@@ -82,14 +82,14 @@
   width: 100%;
   padding: 12px;
   font-size: 17px;
-  background: #27ae60;
+  background: $checkout-btn;
   color: $white;
   margin-top: 5px;
   cursor: pointer;
   transition: background 0.3s ease-in;
 
   &:hover {
-    background: #2ecc71;
+    background: $checkout-btn;
   }
   &:active {
     position: relative;
@@ -115,7 +115,7 @@
     gap: 1rem;
 
     strong {
-      color: green;
+      color: #008000;
       font-size: 0.8em;
     }
   }

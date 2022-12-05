@@ -1,6 +1,6 @@
 .newsletter {
   margin-top: 3.5rem;
-  background-color: #b0b7cb;
+  background-color: $background-newsletter;
   padding: 20px 0;
   box-sizing: content-box;
 
@@ -65,7 +65,7 @@
           }
 
           &__btn {
-            color: #f5f5f5;
+            color: $white;
             background-color: #14161b;
             flex-shrink: 1;
             width: unset;
@@ -77,9 +77,12 @@
             border-radius: 6px;
             text-align: center;
             transition: filter 0.3s ease;
-
             &:hover {
-              filter: opacity(0.9);
+              filter: opacity(0.84);
+            }
+            &:active {
+              position: relative;
+              top: 1px;
             }
           }
 
@@ -95,8 +98,8 @@
               outline: none;
               padding: 0.5rem;
               width: 100%;
-              color: #696969;
-              background-color: #fff;
+              color: $checkout-focus;
+              background-color: $white;
             }
           }
         }

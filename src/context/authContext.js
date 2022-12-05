@@ -5,10 +5,10 @@ import {
   onAuthStateChanged,
   signOut,
   GoogleAuthProvider,
-  signInWithPopup
+  signInWithPopup,
 } from "firebase/auth";
 import { auth, database } from "../firebase/firebase";
-import {collection, addDoc} from "firebase/firestore";
+import { collection, addDoc } from "firebase/firestore";
 
 export const authContext = createContext();
 
@@ -40,13 +40,12 @@ export function AuthProvider(props) {
         date: date,
         totalPrice: preTotal,
         items: items,
-      })
-      return buyOrder
+      });
+      return buyOrder;
     } catch (error) {
       console.error(error);
     }
-  }
-
+  };
 
   const loginWithGoogle = () => {
     const googleProvider = new GoogleAuthProvider();
@@ -64,7 +63,15 @@ export function AuthProvider(props) {
 
   return (
     <authContext.Provider
-      value={{ signup, login, user, logout, loading, loginWithGoogle, createPurchaseOrder }}
+      value={{
+        signup,
+        login,
+        user,
+        logout,
+        loading,
+        loginWithGoogle,
+        createPurchaseOrder
+      }}
     >
       {props.children}
     </authContext.Provider>

@@ -28,19 +28,19 @@
     overflow: hidden;
 
     &:hover {
-      border: 1px solid #000;
+      border: 1px solid $background-footer;
     }
   }
   &__btn-add {
     margin-left: 20px;
-    box-shadow: 0px 1px 0px 0px #f0f7fa;
+    box-shadow: 0px 1px 0px 0px $border-bottom;
     background: linear-gradient(to bottom, #33bdef 5%, #019ad2 100%);
-    background-color: #33bdef;
+    background-color: $cart-btn;
     border-radius: 12px;
     border: 1px solid #057fd0;
     display: inline-block;
     cursor: pointer;
-    color: #ffffff;
+    color: $white;
     font-family: Arial;
     font-size: 15px;
     font-weight: bold;
@@ -52,7 +52,7 @@
     }
     &:hover {
       background: linear-gradient(to bottom, #019ad2 5%, #33bdef 100%);
-      background-color: #019ad2;
+      background-color: $cart-btn-hover;
     }
     &:active {
       position: relative;

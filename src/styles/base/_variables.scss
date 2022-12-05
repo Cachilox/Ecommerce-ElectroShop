@@ -1,11 +1,37 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
 
-$main: #007894;
-$header-top: #14161B;
-$white: #f5f5f5;
-$black: #001e24;
 $ubuntu-font: 'Inter', sans-serif;
-
-
+$white: #fff;
 $btn-prod: #5C5FF7;
+$background-newsletter: #b0b7cb;
+
+// Header
+$header-top: #14161B;
 $header-height: 4.5rem;
+$header-links: #d8d1d1;
+
+// Card
+$border-card: rgba(224, 226, 226, 0.856);
+$hover-card: rgb(193, 201, 201);
+$price-card: #008000;
+$btnHover-card : #6567c2ee;
+
+// Cart
+$removeAll-btn: #e20404;
+$removeAll-hover: #e20404c0;
+$cart-gray: #888787ea;
+$cart-btn: #3483fa;
+$cart-btn-hover: #4284e7ec;
+
+// Checkout
+$checkout-focus: #696666f8;
+$checkout-btn: #27ae60;
+$checkout-btn-hover: #2ecc71;
+
+// Footer 
+$background-footer: rgb(10, 10, 10);
+$border-bottom: #ccc;
+$background-color-social: rgb(238, 229, 229);
+$linear-gradient-footer: linear-gradient(45deg, #405de6, #5851db, #833ab4, #c13584, #e1306c, #fd1d1d);
+$hover-twitter-footer: #1ca4f2;
+$hover-facebook-footer: #187af2;

@@ -1,5 +1,5 @@
 .form-login {
-    background-color: #fff;
+    background-color: $white;
     margin: auto;
     max-width: 500px;
     padding: 2.2em 3em;
@@ -24,11 +24,11 @@
         }
     }
     &__link {
-        color: #111;
+        color: $background-footer;
         font-weight: 600;
     }
     &__error {
-        color: #ff0000;
+        color: $removeAll-btn;
         text-align: center;
     }
     &__submit {
@@ -41,6 +41,14 @@
         border-radius: 0.5em;
         font-family: $ubuntu-font;
         cursor: pointer;
+        transition: background 250ms ease;
+        &:hover {
+            background: $btnHover-card;
+        }
+        &:active {
+            position: relative;
+            top: 1px;
+        }
     }
 
     &__container {
@@ -59,7 +67,7 @@
                 padding: .6em .3em;
                 border: none;
                 outline: none;
-                border-bottom: 1px solid #5757577e;
+                border-bottom: 1px solid $cart-gray;
                 font-family: $ubuntu-font;
                 &:not(:placeholder-shown) {
                     color: #111;
@@ -74,7 +82,7 @@
             }
 
             .label {
-                color: #837d7df1;
+                color: $cart-gray;
                 cursor: pointer;
                 position: absolute;
                 top: 0;
@@ -117,10 +125,18 @@
             align-items: center;
             justify-content: center;
             gap: 0.8em;
+            transition: background 250ms ease;
+            &:hover {
+                background: $cart-btn;
+            }
+            &:active {
+                position: relative;
+                top: 1px;
+            }
 
             .icon-google {
                 font-size: 1.3em;
-                background-color: #fff;
+                background-color: $white;
                 border-radius: 0.5em;
             }
         }

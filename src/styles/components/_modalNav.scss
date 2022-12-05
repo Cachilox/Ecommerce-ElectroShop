@@ -6,7 +6,7 @@
   height: 100vh;
   overflow-y: auto;
   overflow-x: hidden;
-  background-color: #1f2022;
+  background-color: $header-top;
   padding: 20px 16px;
   transition: left 0.5s ease-in-out;
   z-index: 2;
@@ -22,7 +22,7 @@
     margin-top: 50px;
   }
   &__links {
-    color: #d8d1d1;
+    color: $header-links;
     font-weight: 700;
     font-size: 1.1em;
     display: flex;

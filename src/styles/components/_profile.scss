@@ -6,13 +6,12 @@
   align-items: stretch;
   border: 0.13rem solid $btn-prod;
   box-shadow: 0.3rem 0.3rem 0 #343594e8;
-  // margin: 2rem 0;
   max-width: 36rem;
   min-height: 12rem;
 
   &__title {
     margin-bottom: 1.5rem;
-    color: $black;
+    color: $header-top;
   }
   &__span {
     display: inline-flex;
@@ -32,7 +31,7 @@
     border: 1px solid #337bc4;
     display: inline-block;
     cursor: pointer;
-    color: #ffffff;
+    color: $white;
     font-family: Arial;
     font-size: 17px;
     font-weight: bold;

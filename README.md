@@ -4,7 +4,7 @@ _E-commerce simulator built with React.js and Firestore, for the CoderHouse cour
 
 ## Deployment
 
-deploy: [electroshop.vercel.app](electroshop.vercel.app)
+deploy: [https://electroshop.vercel.app/](https://electroshop.vercel.app/)
 
 ### Description
 

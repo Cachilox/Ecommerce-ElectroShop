@@ -49,43 +49,56 @@ const Checkout = () => {
     if (!form.address.trim()) {
       errors.address = 'El campo "Address" no debe ser vacio.';
     }
-    // if (!form.city.trim()) {
-    //   errors.city = 'El campo "City" no debe ser vacio.';
-    // }
 
-    // if (!form.nameOnCard.trim()) {
-    //   errors.nameOnCard = 'El campo "Name on card" no debe ser vacio.';
-    // }
+    if (!form.city.trim()) {
+      errors.city = 'El campo "City" no debe ser vacio.';
+    }else if(!regexName.test(form.city)) {
+      errors.city = 'El campo "City" solo acepta letras.';
+    }
 
-    // if (!form.cardNumber.trim()) {
-    //   errors.cardNumber = 'El campo "Credit card number" no debe ser vacio.';
-    // }
+    if (!form.nameOnCard.trim()) {
+      errors.nameOnCard = 'El campo "Name on card" no debe ser vacio.';
+    }else if(!regexName.test(form.nameOnCard)) {
+      errors.nameOnCard = 'El campo "Name on card" solo acepta letras.';
+    }
 
-    // if (!form.dni.trim()) {
-    //   errors.dni = 'El campo "DNI" no debe ser vacio.';
-    // }
+    if (!form.cardNumber.trim()) {
+      errors.cardNumber = 'El campo "Credit card number" no debe ser vacio.';
+    }
 
-    // if (!form.expMonth.trim()) {
-    //   errors.expMonth = 'El campo "Exp Month" no debe ser vacio.';
-    // }
+    if (!form.dni.trim()) {
+      errors.dni = 'El campo "DNI" no debe ser vacio.';
+    }else if(form.dni.length !== 8){
+      errors.dni = 'El "DNI" debe tener 8 caracteres.';
+    }
 
-    // if (!form.state.trim()) {
-    //   errors.state = 'El campo "State" no debe ser vacio.';
-    // }
+    if (!form.expMonth.trim()) {
+      errors.expMonth = 'El campo "Exp Month" no debe ser vacio.';
+    }else if(!regexName.test(form.expMonth)) {
+      errors.expMonth = 'El campo "Exp Month" solo acepta letras.';
+    }
 
-    // if (!form.zipCode.trim()) {
-    //   errors.zipCode = 'El campo "Zip code" no debe ser vacio.';
-    // }
+    if (!form.state.trim()) {
+      errors.state = 'El campo "State" no debe ser vacio.';
+    }else if(!regexName.test(form.state)) {
+      errors.state = 'El campo "State" solo acepta letras.';
+    }
 
-    // if (!form.expYear.trim()) {
-    //   errors.expYear = 'El campo "Exp year" no debe ser vacio.';
-    // } else if (form.expYear < 2022) {
-    //   errors.expYear = "Fecha expirada, ingrese un año valido.";
-    // }
+    if (!form.zipCode.trim()) {
+      errors.zipCode = 'El campo "Zip code" no debe ser vacio.';
+    }
 
-    // if (!form.cvv.trim()) {
-    //   errors.cvv = 'El campo "CVV" no debe ser vacio.';
-    // }
+    if (!form.expYear.trim()) {
+      errors.expYear = 'El campo "Exp year" no debe ser vacio.';
+    } else if (form.expYear < 2022) {
+      errors.expYear = "Fecha expirada, ingrese un año valido.";
+    }
+
+    if (!form.cvv.trim()) {
+      errors.cvv = 'El campo "CVV" no debe ser vacio.';
+    }else if(form.cvv.length !== 4 ) {
+      errors.cvv = 'El campo "CVV" debe tener 4 digitos.';
+    }
 
     return errors;
   };
@@ -208,7 +221,7 @@ const Checkout = () => {
               <div className="inputBox">
                 <span className="inputBox__span">Zip code :</span>
                 <input
-                  type="text"
+                  type="number"
                   placeholder="123 456"
                   name="zipCode"
                   onChange={handleChange}

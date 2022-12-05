@@ -11,7 +11,7 @@
         gap: 1.4em;
 
         button {
-            background: #e20404;
+            background: $removeAll-btn;
             height: 100%;
             color: $white;
             font-size: 1.1em;
@@ -21,6 +21,10 @@
             cursor: pointer;
             display: flex;
             align-items: center;
+            transition: background 200ms ease;
+            &:hover {
+                background: $removeAll-hover;
+            }
         }
     }
 
@@ -39,10 +43,13 @@
     &__delete {
         margin-top: 0.4rem;
         border: none;
-        color: red;
+        color: $removeAll-btn;
         padding: 0rem 0.8rem;
         font-size: 1.5rem;
         cursor: pointer;
+        &:hover {
+            color: $removeAll-hover;
+        }
     }
 
     &__sigleProduct {
@@ -50,8 +57,7 @@
         padding: 13px;
         display: flex;
         align-items: center;
-        box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-        border-bottom: 2px solid gray;
+        border-bottom: 1.7px solid $cart-gray;
         margin: 0 auto;
 
         img {
@@ -72,14 +78,14 @@
         }
     }
     &__free {
-        color: #008000;
+        color: $price-card;
         font-weight: 500;
         margin-top: 0.35rem;
         display: flex;
         gap: 1em;
 
         span:nth-child(2) {
-            color: gray;
+            color: $cart-gray;
         }
     }
 
@@ -106,7 +112,7 @@
     padding: 13px;
     font-size: 1.2em;
     font-weight: 600;
-    border: 1px solid rgb(145, 144, 144);
+    border: 1px solid $cart-gray;
     border-radius: 5px;
     @include breakpoints-up(breakProd) {
         width: 30rem;
@@ -122,13 +128,21 @@
     &__btn {
         margin-top: 1.3rem;
         width: 100%;
-        background-color: #3483fa;
+        background-color: $cart-btn;
         color: $white;
         font-size: 1.1rem;
         padding: 13px 32px 12px;
         border-radius: 7px;
         cursor: pointer;
         border: none;
+        transition: background 200ms ease;
+        &:hover {
+            background: $cart-btn-hover;
+        }
+        &:active {
+            position: relative;
+            top: 1px;
+        }
     }
 }
 
@@ -146,12 +160,12 @@
       align-items: center;
       justify-content: center;
       font-size: 1.3em;
-      color: #5C5FFA;
+      color: $btn-prod;
       margin-top: 0.7rem;
       cursor: pointer;
     }
     span {
-      color: gray;
+      color: $cart-gray;
     }
     .arrowLeft {
       font-size: 2rem;

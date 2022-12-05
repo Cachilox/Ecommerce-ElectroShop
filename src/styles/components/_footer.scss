@@ -1,12 +1,12 @@
 .footer {
-    background-color: #000;
+    background-color: $background-footer;
     color: $white;
     padding: 50px 0 20px 0;
 
     &__container {
         max-width: 1200px;
         margin: 0 auto;
-        border-bottom: 1.7px solid #ccc;
+        border-bottom: 1.7px solid $border-bottom;
     }
 
     &__row {
@@ -23,8 +23,8 @@
             margin-bottom: 15px;
         }
         .links {
-            color: #ccc;
-            font-size: 1em;
+            color: $border-bottom;
+            font-size: 1.06em;
             text-transform: capitalize;
             text-decoration: none;
             font-weight: 300;
@@ -64,7 +64,7 @@
             display: inline-block;
             height: 40px;
             width: 40px;
-            background-color: rgb(238, 229, 229);
+            background-color: $background-color-social;
             margin: 0 10px 10px 0;
             text-align: center;
             line-height: 50px;
@@ -75,15 +75,15 @@
 
             &:hover {
                 color: white;
-                background: linear-gradient(45deg, #405de6, #5851db, #833ab4, #c13584, #e1306c, #fd1d1d);
+                background: $linear-gradient-footer;
             }
             &:hover:last-child {
                 color: $white;
-                background: #1ca4f2;
+                background: $hover-twitter-footer;
             }
             &:hover:first-child {
                 color: $white;
-                background: #187af2;
+                background: $hover-facebook-footer;
             }
         }
     }
