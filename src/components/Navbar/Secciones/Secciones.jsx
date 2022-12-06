@@ -4,7 +4,6 @@ import { navBarOptions } from "../../helpers/strings";
 import Hamburger from "hamburger-react"
 
 function Secciones() {
-  const [isOpen, setOpen] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)
 
   const [size, setSize] = useState({
@@ -36,7 +35,7 @@ function Secciones() {
 
   return (
     <>
-      <i className="hamburger-react" onClick={menuToggleHandler}><Hamburger toggled={menuOpen} toggle={setOpen} size="22"/></i>
+      <i className="hamburger-react" onClick={menuToggleHandler}><Hamburger toggled={menuOpen}  size="22"/></i>
 
       <Link to="/">
         <h1 className="title-nav">Electro Shop</h1>
@@ -55,7 +54,7 @@ function Secciones() {
 
       {/* MODAL NAVBAR */}
       <div className="background"></div>
-      <div className={`modal-navbar ${menuOpen && size.width < 896 ? "activeNav" : ""}`}>
+      <div className={`modal-navbar ${menuOpen ? "activeNav" : ""}`}>
         <ul className="modal-navbar__items">
           {navBarOptions.map(navBarOption => 
           <li key={navBarOption.id}>

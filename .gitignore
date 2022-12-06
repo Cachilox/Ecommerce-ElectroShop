@@ -2,7 +2,6 @@
 
 # dependencies
 /node_modules
-/public/json
 /.pnp
 .pnp.js
 /.env

@@ -2,7 +2,7 @@ import { useAuth } from "../../context/authContext";
 
 function UserProfile() {
   const { user, logout, loading } = useAuth();
-  const { displayName, email } = user;
+  const { displayName, email, uid } = user;
 
   const handleLogout = async () => {
     try {
@@ -18,6 +18,9 @@ function UserProfile() {
     <div className="container">
       <div className="profile container">
         <h1 className="profile__title">Perfil</h1>
+        <span className="profile__span">
+          User ID: <b>{uid.toUpperCase()}</b>
+        </span>
         <span className="profile__span">
           Name: <b>{displayName}</b>
         </span>
