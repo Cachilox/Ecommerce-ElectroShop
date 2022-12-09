@@ -1,7 +1,7 @@
 import { useCart } from "../../context/cartContext";
 import ItemCount from "../ItemCount/ItemCount";
 import { FaRegCreditCard, FaTruck } from "react-icons/fa";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
@@ -11,6 +11,12 @@ import { Navigation, Pagination } from "swiper";
 function ItemDetail({ producto }) {
   const { addItem } = useCart();
   const [quantity, setQuantity] = useState(0);
+
+  useEffect(() => {
+    return () => {
+      window.scrollTo(0, 0)
+    };
+  }, []);
 
   const {
     img,
@@ -87,7 +93,7 @@ function ItemDetail({ producto }) {
                 Go to cart
               </Link>
               <Link className="card-detail__cart" to={"/checkout"}>
-               buy now
+                buy now
               </Link>
             </>
           )}

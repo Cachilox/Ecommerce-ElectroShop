@@ -1,10 +1,16 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useAuth } from "../../context/authContext";
 import { Link, useNavigate } from "react-router-dom";
 import { Alert } from "./Alert";
 import { FcGoogle } from "react-icons/fc";
 
 function Login() {
+  useEffect(() => {
+    return () => {
+      window.scrollTo(0,0)
+    };
+  }, []);
+
   const [user, setUser] = useState({
     email: "",
     password: "",

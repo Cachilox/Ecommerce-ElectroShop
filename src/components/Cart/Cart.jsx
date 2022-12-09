@@ -3,8 +3,14 @@ import { useCart } from "../../context/cartContext";
 import { TiTimes } from "react-icons/ti";
 import CartEmpty from "./CartEmpty";
 import CartItem from "./CartItem";
+import { useEffect } from "react";
 
 const Cart = () => {
+  useEffect(() => {
+    return () => {
+      window.scrollTo(0, 0)
+    };
+  }, []);
 
   const { cart, emptyCart, totalPrice } = useCart();
   return (

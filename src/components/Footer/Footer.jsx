@@ -1,12 +1,18 @@
 import { Link } from "react-router-dom";
 import { navBarOptions, footerContact, metodosPagos, footerSocialLinks } from "../helpers/strings";
 import Newsletter from "./Newsletter";
+import {FaAngleDoubleUp} from "react-icons/fa"
 
 const Footer = () => {
+
+  const windowUp = () => {
+    window.scrollTo(0,0)
+  }
   return (
     <>
       <Newsletter />
       <footer className="footer">
+        <div className="btnUp" onClick={windowUp}><button><FaAngleDoubleUp/></button></div>
         <div className="footer__container">
           <div className="footer__row">
             <div className="footer__col">
@@ -63,6 +69,9 @@ const Footer = () => {
               return <img key={card.id} src={card.src} alt={card.alt} />;
             })}
           </div>
+        </div>
+        <div className="footer__creator">
+          <p>© 2022 Electro Shop, Inc. Todos los derechos reservados. Desarrollado por <a rel="noreferrer" target="_blank" href="https://www.linkedin.com/in/cachilo/">Mariano Alvarez</a></p>
         </div>
       </footer>
     </>

@@ -148,8 +148,11 @@
 
 .cart-empty {
     text-align: center;
-    margin-top: 5.6rem;
-    height: 55vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 70vh;
   
     h2 {
       margin-bottom: 0.6rem;

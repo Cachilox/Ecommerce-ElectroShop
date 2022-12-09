@@ -2,6 +2,7 @@
     background-color: $background-footer;
     color: $white;
     padding: 50px 0 20px 0;
+    position: relative;
 
     &__container {
         max-width: 1200px;
@@ -87,7 +88,21 @@
             }
         }
     }
-
+    &__creator {
+        text-align: center;
+        margin-top: 1.2rem;
+        font-size: 0.8em;
+        a {
+            color: $btn-prod;
+            &:hover {
+                color: $btnHover-card;
+            }
+            &:active{
+                position: relative;
+                top: 1px;
+            }
+        }
+    }
 }
 .contact {
     text-align: left;
@@ -119,7 +134,30 @@
         flex-wrap: wrap;
         img {
             width: 70px;
-            filter: drop-shadow(0 0 1px $white);
+            &:hover {
+                filter: drop-shadow(0 0 1px $white);
+            }
+        }
+    }
+}
+.btnUp {
+    position: absolute;
+    top: -14px;
+    left: 50%;
+    button {
+        position: sticky;
+        border: none;
+        font-size: 1.6rem;
+        color: $btn-prod;
+        width: 48px;
+        border-radius: 10px;
+        cursor: pointer;
+        &:hover {
+            color: $btnHover-card;
+        }
+        &:active{
+            position: relative;
+            top: 1px;
         }
     }
 }

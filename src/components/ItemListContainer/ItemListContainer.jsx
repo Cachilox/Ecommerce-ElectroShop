@@ -27,6 +27,7 @@ const ItemListContainer = () => {
   }, []);
 
   useEffect(() => {
+    window.scrollTo(0, 0)
     if (category) {
       getProducts().then((products) => {
         const productsList = products.filter(

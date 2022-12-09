@@ -7,7 +7,6 @@ const ItemDetailContainer = () => {
   const [producto, setProducto] = useState([]);
 
   const { id } = useParams();
-  // const { darkMode } = useContext(DarkModeContext);
 
   useEffect(() => {
     getProduct(id).then(prod => {

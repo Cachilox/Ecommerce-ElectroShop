@@ -32,13 +32,23 @@ function App() {
                 <Route path="/" element={<ItemListContainer />} />
                 <Route path="/product/:id" element={<ItemDetailContainer />} />
                 <Route path="/cart" element={<Cart />} />
-                <Route path="/category/:category" element={<ItemListContainer />} />
+                <Route
+                  path="/category/:category"
+                  element={<ItemListContainer />}
+                />
                 <Route path="/checkout" element={<Checkout />} />
                 <Route path="/login" element={<Login />} />
                 <Route path="/register" element={<Register />} />
                 <Route path="/order/:id" element={<OrderCreate />} />
-                <Route path="/profile" element={<ProtectedRoute><UserProfile /></ProtectedRoute>} />
-                <Route path="*" element={<NotFound/>}/>
+                <Route
+                  path="/profile"
+                  element={
+                    <ProtectedRoute>
+                      <UserProfile />
+                    </ProtectedRoute>
+                  }
+                />
+                <Route path="*" element={<NotFound />} />
               </Routes>
             </main>
             <ToastContainer className="foo" />

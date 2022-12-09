@@ -17,7 +17,7 @@ export const navBarOptions = [
   { icon: <FaHome/>, category: "Home", id: 1, to: "/" },
   { iconN:"https://firebasestorage.googleapis.com/v0/b/proyecto-react-coderhous-192d5.appspot.com/o/graphics-card.png?alt=media&token=60a10f84-bcff-4363-afe1-808b3fd71e44", category: "Video card", id: 2, to: "/category/placas-video"},
   { icon: <TfiMobile/>, category: "Celular", id: 3, to: "/category/celular" },
-  { icon: <MdLaptopMac/>, category: "Notebook", id: 4, to: "/category/notebook" },
+  { icon: <MdLaptopMac/>, category: "Notebook", id: 4, to: "/category/notebook" }
 ];
 
 export const footerContact = [
