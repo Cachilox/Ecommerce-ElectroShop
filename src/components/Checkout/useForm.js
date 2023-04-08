@@ -6,11 +6,10 @@ import {
   updateProduct
 } from "../../firebase/firebase";
 import { useAuth } from "../../context/authContext";
+import { onValidate } from "../helpers/validate";
 
-const useForm = (initalData, onValidate) => {
-  const [form, setForm] = useState(initalData);
+const useForm = (initalData) => {
   const [loading, setLoading] = useState(false);
-  const [errors, setErros] = useState({});
   const { cart, totalPrice, emptyCart } = useCart();
   const [orderId, setOrderId] = useState();
   const [orderCreated, setOrderCreated] = useState(false);
@@ -21,8 +20,7 @@ const useForm = (initalData, onValidate) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const err = onValidate(form);
-    setErros(err);
+    const err = onValidate(initalData);
 
     if (Object.keys(err).length === 0) {
       setLoading(true);
@@ -47,6 +45,7 @@ const useForm = (initalData, onValidate) => {
           updateProduct(product.id, prod);
         });
       });
+      
       createPurchaseOrder(formValues, dateNow, totalPrice(), cartItem)
         .then((order) => {
           toast.success(`Su orden ${order.id} se creo con éxito!`, {
@@ -72,16 +71,8 @@ const useForm = (initalData, onValidate) => {
     }
   };
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setForm({ ...form, [name]: value });
-  };
-
   return {
-    form,
-    errors,
     loading,
-    handleChange,
     handleSubmit,
     orderId,
     orderCreated,
